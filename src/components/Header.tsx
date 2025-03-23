@@ -56,7 +56,7 @@ const Header = () => {
             </Button>
           )}
           <a
-            href="/"
+            href="/portfolio/"
             className="text-lg font-medium tracking-tight hover:opacity-80 transition-opacity"
           >
             George Nosachev
