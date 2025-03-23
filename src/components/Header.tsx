@@ -35,7 +35,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/portfolio/")}
               className="mr-2 animate-fade-in"
               aria-label="Back to home"
             >
