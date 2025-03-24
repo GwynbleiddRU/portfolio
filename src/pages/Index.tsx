@@ -41,28 +41,7 @@ const Index = () => {
               onClick={() => {
                 const section = document.getElementById("projects");
                 if (section) {
-                  const targetPosition = section.getBoundingClientRect().top + window.scrollY;
-                  const startPosition = window.scrollY;
-                  const distance = targetPosition - startPosition;
-                  let startTime = null;
-
-                  function smoothScroll(currentTime) {
-                    if (!startTime) startTime = currentTime;
-                    const timeElapsed = currentTime - startTime;
-                    const duration = 1500; // Increase duration (in ms) to slow down scrolling
-                    const easing = (t) => t * (2 - t); // Ease-in-out function
-
-                    const newPosition = startPosition + distance * easing(timeElapsed / duration);
-                    window.scrollTo(0, newPosition);
-
-                    if (timeElapsed < duration) {
-                      requestAnimationFrame(smoothScroll);
-                    } else {
-                      window.scrollTo(0, targetPosition); // Ensure final position is correct
-                    }
-                  }
-
-                  requestAnimationFrame(smoothScroll);
+                  section.scrollIntoView({ behavior: "smooth" });
                 }
               }}
               className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -70,6 +49,7 @@ const Index = () => {
               View My Work
             </button>
           </div>
+
 
         </div>
       </section>
