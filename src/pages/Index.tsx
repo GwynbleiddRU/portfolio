@@ -56,31 +56,27 @@ const Index = () => {
 
       {/* About Section */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
-          <div className="flex-1">
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          {/* About Me Text */}
+          <div className="flex-1 order-2 md:order-1">
             <span className="text-sm font-medium text-muted-foreground mb-4 block">
               About Me
             </span>
-
             <h2 className="text-3xl font-bold tracking-tight mb-6">
               Experienced Fullstack developer with deep knowledge of software engineering and extensive hands-on experience developing full-stack applications.
             </h2>
-
             <p className="text-muted-foreground mb-6">
               I have extensive experience working with AI tools in development context with clear understanding of how good prompts should look like. Currently learning MCP for an even more native development process with AI.
             </p>
-
             <p className="text-muted-foreground mb-6">
               I am most interested in developing APIs and logic for highly loaded systems.
             </p>
-
             <p className="text-muted-foreground">
               English - C1, Spanish - A2, Russian - Native
             </p>
           </div>
-
-
-          <div className="flex-1 md:flex-initial md:w-1/3">
+          {/* Portrait Image */}
+          <div className="w-full md:w-1/3 order-1 md:order-2 mb-8 md:mb-0 px-8 md:px-0">
             <div className="aspect-square rounded-2xl overflow-hidden bg-muted">
               <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${portraitImage})` }}></div>
             </div>
