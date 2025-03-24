@@ -1,3 +1,10 @@
+import TLApiImage from '../assets/images/projects/tunelike-api.jpg';
+import TLApiAuthImage from '../assets/images/projects/tunelike-api-auth.jpg';
+import TLApiChatImage from '../assets/images/projects/tunelike-api-chat.jpg';
+import TLApiDatingImage from '../assets/images/projects/tunelike-api-dating.jpg';
+import TLApiEventsImage from '../assets/images/projects/tunelike-api-events.jpg';
+import TLApiDataImage from '../assets/images/projects/tunelike-api-data.jpg';
+import TLApiUtilitiesImage from '../assets/images/projects/tunelike-api-utilities.jpg';
 
 export interface Project {
   id: string;
@@ -6,13 +13,132 @@ export interface Project {
   fullDescription: string;
   technologies: string[];
   imageUrl: string;
+  images?: ProjectImage[];
   liveUrl?: string;
   demoUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  template: 'standard' | 'multi-image';
+}
+
+
+export interface ProjectImage {
+  url: string;
+  description?: string;
 }
 
 export const projects: Project[] = [
+  {
+    id: "tunelike-api",
+    title: "Social platform API",
+    shortDescription: "API endpoint for social platform with dating and events mechanics",
+    fullDescription: `This project is the most comprehensive work I've done so far and I'm truly proud of it.
+
+      A complete and secure API for the social platform "TuneLike" was developed based on ASP.NET Core, following the principles of clean architecture and high performance. The platform integrates multiple sophisticated systems:
+
+      - A robust authentication system with JWT-based security, multiple login methods, and comprehensive account management
+      - A real-time chat system powered by SignalR for instant messaging across private, group, and event-specific conversations
+      - An intelligent dating module featuring smart matching algorithms, profile management, and interaction systems with privacy controls
+      - A community-focused events discovery system with regional filtering, participation management, and user feedback mechanisms
+      - Advanced data collection and analytics for personalized recommendations based on music preferences and user activity
+      - Comprehensive utility services including account settings, referral systems, and psychological profiling based on music tastes
+
+      The API was deployed on a Linux VPS using Nginx for efficient routing among service components, coordinating communication between MongoDB database, media services, and client applications. The implementation leverages modern web development practices including asynchronous programming, in-memory caching strategies, and thorough error handling with detailed logging throughout.
+
+      This project demonstrates the successful integration of multiple complex systems into a cohesive, scalable, and secure platform designed to create meaningful social connections through shared music interests.
+      `,
+    technologies: ["ASP.NET Core", "REST API", "MongoDB", "Swagger/OpenAPI", "SignalR", "Background Workers", "Python Web Scraping", "JWT Authentication", "OAuth Integration", "BCrypt Password Hashing", "Dependency Injection", "In-Memory Caching", "Nginx", "Linux VPS", "Asynchronous Programming", "Rate Limiting", "Data Analytics", "Collaborative Filtering", "Email Service Integration", "Logging Framework", "Entity Relationship Management", "Message Queuing"],
+    imageUrl: TLApiImage,
+    images: [
+      {
+        url: TLApiAuthImage,
+        description: `
+        The authentication system in TuneLike is built with ASP.NET Core and follows modern security practices:
+        
+        - JWT-based Authentication: Implements secure token-based authentication with support for claims validation.
+        - Multiple Login Methods: Traditional email/password authentication with BCrypt password hashing and OAuth integration with Yandex for social login
+        - Account Management: User registration with username and email validation, password recovery workflow, token validation, and account settings management
+        - Security Features: Rate limiting for sensitive operations, token revocation functionality, and comprehensive logging
+        - User Identity: Profile linking with authentication providers and user flags system for marking account verification status
+        
+        The Auth controller demonstrates a clean dependency injection approach with well-defined service interfaces and comprehensive Swagger documentation.
+        `
+      },
+      {
+        url: TLApiChatImage,
+        description: `
+        The chat system is built with a real-time communication architecture:
+        
+        - Multiple Chat Types: Private one-to-one conversations, group chats with admin and moderator roles, and event-specific chats for community engagement
+        - Real-time Messaging: SignalR integration for instant message delivery, connection management with unique connection IDs, and message queuing service
+        - Chat Management: Comprehensive participant management, moderation capabilities, chat customization (name, avatar), and notification preferences
+        - Message Features: Support for text content and attachments, pagination for message history, and metadata enrichment for sender information
+        - Security: Authorization checks for all operations, participant validation for chat access, and role-based permission system
+        
+        The implementation follows a clean architecture with MongoDB for data storage and comprehensive input validation.
+        `
+      },
+      {
+        url: TLApiDatingImage,
+        description: `
+        The Dating module provides a comprehensive set of endpoints for managing user dating profiles, matches, and interactions. provides functionality for profile management, candidate discovery, matching, and user interactions including likes, dislikes, blocks, and reports. It implements caching strategies for swiped profiles and dating filters to enhance performance.
+
+        - Profile Management: Comprehensive dating profile creation and customization, preference settings, and activity tracking
+        - Smart Matching: Algorithm-based candidate discovery with filtering options, match recommendations, and event-based matching
+        - Interaction System: Like/dislike functionality, mutual match detection, blocking and reporting capabilities
+        - Cache Optimization: In-memory caching for swiped profiles and filters, optimized candidate retrieval, and performance enhancements
+        - Privacy Controls: User blocking functionality, match removal options, and profile visibility management
+        - Security: JWT-based authorization for all operations, comprehensive input validation, and robust error handling
+        
+        The implementation follows RESTful design principles with asynchronous operations and thorough logging throughout.
+        `
+      },
+      {
+        url: TLApiEventsImage,
+        description: `
+        The Events module manages event discovery, details, and user participation in a social context. New events are collected regularly from public sources of ticket aggregators by python scripts scheduled in background.
+        
+        - Regional Event Discovery: City-based event browsing, filtering capabilities by various criteria, and pagination for efficient loading
+        - Event Details: Comprehensive event information, venue details, and participant information with avatar display
+        - Participation Management: One-click participation toggling, participant tracking, and attendance verification
+        - Feedback System: User reviews and ratings for attended events, feedback management, and event quality metrics
+        - User Engagement: Recent participant display, participation counts, and social integration
+        - Security: JWT-based authentication for participant operations and input validation for all interactions
+        
+        The implementation follows a service-oriented design with exception handling and detailed error logging.
+        `
+      },
+      {
+        url: TLApiDataImage,
+        description: `
+        The data collection system analyzes user activity and music preferences:
+        
+        - User Activity Tracking: Monitors platform engagement patterns, analyzes interaction with events and content, and records browsing behavior
+        - Music Profile Analysis: Extracts and processes user playlist information, collects artist and track metadata, and categorizes music by various attributes
+        - Recommendation Engine: Uses collected data to generate personalized event suggestions, creates customized content feeds, and implements collaborative filtering
+        - Privacy Considerations: Transparent data collection policies, user control over data sharing preferences, and anonymization processes
+        
+        The system employs data analytics techniques to enhance user experience while maintaining appropriate privacy boundaries.
+        `
+      },
+      {
+        url: TLApiUtilitiesImage,
+        description: `
+        The utility services provide supporting functionality across the platform:
+        
+        - Account Settings: Comprehensive user preference management, notification controls, and privacy options
+        - Referral System: User invitation tracking, reward mechanisms for successful referrals, and conversion analytics
+        - Psychological Profiling: Analysis of music preferences to determine personality traits, behavioral pattern recognition, and creation of user preference profiles
+        - Cross-cutting Concerns: Email service integration for notifications, logging and monitoring infrastructure, and settings persistence
+        
+        These utility services enhance the core functionality of the platform while creating a more personalized user experience.
+        `
+      }
+    ],
+    liveUrl: "",
+    githubUrl: "https://github.com/TuneLike/tunelike-api",
+    template: "multi-image"
+  },
   {
     id: "dbclient",
     title: "DBClient",
@@ -32,6 +158,7 @@ export const projects: Project[] = [
     demoUrl: "https://www.youtube.com/watch?v=VNeDhh1Ge9U",
     githubUrl: "https://github.com/GwynbleiddRU/DBClient",
     featured: true,
+    template: "standard"
   },
   {
     id: "wpf-diagram-editor",
@@ -51,6 +178,7 @@ export const projects: Project[] = [
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/Nodes",
     featured: false,
+    template: "standard"
   },
   {
     id: "3dstruct-editor",
@@ -70,6 +198,7 @@ export const projects: Project[] = [
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/3DStruct",
     featured: true,
+    template: "standard"
   },
   {
     id: "svo-airport-personnel-management",
@@ -89,9 +218,12 @@ export const projects: Project[] = [
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/SVO_Management",
     featured: true,
+    template: "standard"
   }
 ];
 
 export const getProjectById = (id: string): Project | undefined => {
   return projects.find(project => project.id === id);
 };
+
+export const getProjects = () => projects;
