@@ -6,6 +6,10 @@ import TLApiEventsImage from '../assets/images/projects/tunelike-api-events.jpg'
 import TLApiDataImage from '../assets/images/projects/tunelike-api-data.jpg';
 import TLApiUtilitiesImage from '../assets/images/projects/tunelike-api-utilities.jpg';
 
+import MediaStorageImage from '../assets/images/projects/simple-media-storage.jpg'
+import MediaStorageApiImage from '../assets/images/projects/media-storage-images.jpg'
+import MediaStorageCropImage from '../assets/images/projects/media-storage-crops.jpg'
+
 export interface Project {
   id: string;
   title: string;
@@ -137,6 +141,109 @@ export const projects: Project[] = [
     ],
     liveUrl: "",
     githubUrl: "https://github.com/TuneLike/tunelike-api",
+    template: "multi-image"
+  },
+  {
+    id: "simple-media-storage",
+    title: "Simple media storage",
+    shortDescription: "Reusable media-storage for pet projects",
+    fullDescription: `
+    A comprehensive, secure, and scalable media management solution with robust features:
+
+    Architecture:
+
+    - RESTful API design
+    - JWT-based authentication
+    - Dependency injection for modular service composition
+    - Cross-origin resource sharing (CORS) support
+
+    Security Features:
+
+    - Policy-based authorization
+    - File size limitations (5MB max)
+    - Secure file path generation
+    - ETag and caching support
+
+    Key Endpoints:
+
+    - Media upload (file/URL)
+    - Media listing
+    - Media retrieval with optional cropping
+    - Media metadata update
+    - Media deletion
+
+    Performance Optimizations:
+
+    - Image compression
+    - WebP conversion
+    - Caching headers
+    - Efficient file handling
+
+    The API represents a sophisticated, production-ready media storage and processing solution with a focus on flexibility, performance, and security. Modular design allows easy addition of new media processing features. Configurable through dependency injection. Supports various media types and processing strategies
+    `,
+    technologies: ["ASP.NET Core", "MongoDB", "ImageMagick", "SixLabors.ImageSharp", "JWT Authentication", "Swagger/OpenAPI"],
+    imageUrl: MediaStorageImage,
+    images: [
+      {
+        url: MediaStorageApiImage,
+        description: `
+        The media storage system is a sophisticated, modular ASP.NET Core web API designed for efficient file management and image processing. 
+        Key technological choices include:
+
+        - Database: MongoDB for flexible, document-based storage of media metadata
+        - File Storage: Physical file system storage with structured folder organization
+
+        Image Processing:
+
+        - Uses ImageMagick for advanced image manipulation
+        - Supports automatic image resizing and compression
+        - Converts uploaded images to WebP format for optimal web performance
+
+        Core Mechanics:
+
+        - Generate unique identifiers for each media item
+        - Support for storing metadata like owner, dimensions, file size
+        - Flexible file handling with automatic path generation
+        - Built-in caching and ETag support for efficient file serving
+
+        Notable Features:
+
+        - Maximum image dimension limit (1000 pixels)
+        - Automatic WebP conversion with 75% quality
+        - Center point tracking for intelligent cropping
+        - Support for uploads via file or URL
+        `
+      },
+      {
+        url: MediaStorageCropImage,
+        description: `
+        The crop specification system is a flexible, pre-configured image cropping mechanism that allows precise, reusable image cropping configurations:
+        
+        Technical Approach:
+
+        - Implemented as a repository-backed configuration system
+        - CRUD operations for crop specifications
+        - Supports multiple crop types and dimensions
+        - Dynamically generates crop variations of images
+
+        CropSpecification model with properties:
+
+        - Name: Unique identifier for the crop
+        - Width: Target crop width
+        - Height: Target crop height
+        - Type: Cropping algorithm/strategy
+
+        Workflow:
+
+        - Predefined crop specs can be created, updated, listed, and removed
+        - Media controller uses these specs to generate consistent image variations
+        - Enables intelligent, configurable image cropping without repeated calculations
+        `
+      }
+    ],
+    liveUrl: "",
+    githubUrl: "",
+    featured: true,
     template: "multi-image"
   },
   {
