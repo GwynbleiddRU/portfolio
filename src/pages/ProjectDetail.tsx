@@ -164,7 +164,7 @@ const ProjectDetail = () => {
               <a href="https://www.linkedin.com/in/george-nosachev-8a9938326/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 LinkedIn
               </a>
-              <a href="tel:+7-999-125-0666" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="mailto:nosachev.george@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </a>
             </div>
