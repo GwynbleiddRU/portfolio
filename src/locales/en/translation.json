@@ -1,0 +1,75 @@
+{
+    "hero": {
+        "title": "Fullstack Developer",
+        "greeting": "Hello, my name is George",
+        "description": "I specialize in creating exceptional digital experiences. Currently, I'm exploring AI tools."
+    },
+    "about": {
+        "title": "About Me",
+        "description1": "Experienced Fullstack developer with deep knowledge of software engineering and great hands-on experience developing full-stack applications.",
+        "description2": "I have extensive experience working with AI tools in development context with clear understanding of how good prompts should look like. Currently learning MCP for an even more native development process with AI.",
+        "description3": "I am most interested in developing APIs and logic for highly loaded systems but I'm open for almost any experience.",
+        "languages": "English - C1, Spanish - A2, Russian - Native"
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "A selection of my recent work. Each project is unique and showcases different skills and technologies.",
+        "tunelike-api": {
+            "title": "Social platform API",
+            "shortDescription": "API endpoint for social platform with dating and events mechanics",
+            "fullDescription": "This project is the most comprehensive work I've done so far and I'm truly proud of it.\n\nA complete and secure API for the social platform \"TuneLike\" was developed based on ASP.NET Core, following the principles of clean architecture and high performance. The platform integrates multiple sophisticated systems:\n\n- A robust authentication system with JWT-based security, multiple login methods, and comprehensive account management\n- A real-time chat system powered by SignalR for instant messaging across private, group, and event-specific conversations\n- An intelligent dating module featuring smart matching algorithms, profile management, and interaction systems with privacy controls\n- A community-focused events discovery system with regional filtering, participation management, and user feedback mechanisms\n- Advanced data collection and analytics for personalized recommendations based on music preferences and user activity\n- Comprehensive utility services including account settings, referral systems, and psychological profiling based on music tastes\n\nThe API was deployed on a Linux VPS using Nginx for efficient routing among service components, coordinating communication between MongoDB database, media services, and client applications. The implementation leverages modern web development practices including asynchronous programming, in-memory caching strategies, and thorough error handling with detailed logging throughout.\n\nThis project demonstrates the successful integration of multiple complex systems into a cohesive, scalable, and secure platform designed to create meaningful social connections through shared music interests.",
+            "images": {
+                "auth": {
+                    "description": "The authentication system in TuneLike is built with ASP.NET Core and follows modern security practices:\n        \n        - JWT-based Authentication: Implements secure token-based authentication with support for claims validation.\n        - Multiple Login Methods: Traditional email/password authentication with BCrypt password hashing and OAuth integration with Yandex for social login\n        - Account Management: User registration with username and email validation, password recovery workflow, token validation, and account settings management\n        - Security Features: Rate limiting for sensitive operations, token revocation functionality, and comprehensive logging\n        - User Identity: Profile linking with authentication providers and user flags system for marking account verification status\n        \n        The Auth controller demonstrates a clean dependency injection approach with well-defined service interfaces and comprehensive Swagger documentation."
+                },
+                "chat": {
+                    "description": "The chat system is built with a real-time communication architecture:\n        \n        - Multiple Chat Types: Private one-to-one conversations, group chats with admin and moderator roles, and event-specific chats for community engagement\n        - Real-time Messaging: SignalR integration for instant message delivery, connection management with unique connection IDs, and message queuing service\n        - Chat Management: Comprehensive participant management, moderation capabilities, chat customization (name, avatar), and notification preferences\n        - Message Features: Support for text content and attachments, pagination for message history, and metadata enrichment for sender information\n        - Security: Authorization checks for all operations, participant validation for chat access, and role-based permission system\n        \n        The implementation follows a clean architecture with MongoDB for data storage and comprehensive input validation."
+                },
+                "dating": {
+                    "description": "The Dating module provides a comprehensive set of endpoints for managing user dating profiles, matches, and interactions. provides functionality for profile management, candidate discovery, matching, and user interactions including likes, dislikes, blocks, and reports. It implements caching strategies for swiped profiles and dating filters to enhance performance.\n\n        - Profile Management: Comprehensive dating profile creation and customization, preference settings, and activity tracking\n        - Smart Matching: Algorithm-based candidate discovery with filtering options, match recommendations, and event-based matching\n        - Interaction System: Like/dislike functionality, mutual match detection, blocking and reporting capabilities\n        - Cache Optimization: In-memory caching for swiped profiles and filters, optimized candidate retrieval, and performance enhancements\n        - Privacy Controls: User blocking functionality, match removal options, and profile visibility management\n        - Security: JWT-based authorization for all operations, comprehensive input validation, and robust error handling\n        \n        The implementation follows RESTful design principles with asynchronous operations and thorough logging throughout."
+                },
+                "events": {
+                    "description": "The Events module manages event discovery, details, and user participation in a social context. New events are collected regularly from public sources of ticket aggregators by python scripts scheduled in background.\n        \n        - Regional Event Discovery: City-based event browsing, filtering capabilities by various criteria, and pagination for efficient loading\n        - Event Details: Comprehensive event information, venue details, and participant information with avatar display\n        - Participation Management: One-click participation toggling, participant tracking, and attendance verification\n        - Feedback System: User reviews and ratings for attended events, feedback management, and event quality metrics\n        - User Engagement: Recent participant display, participation counts, and social integration\n        - Security: JWT-based authentication for participant operations and input validation for all interactions\n        \n        The implementation follows a service-oriented design with exception handling and detailed error logging."
+                },
+                "data": {
+                    "description": "The data collection system analyzes user activity and music preferences:\n        \n        - User Activity Tracking: Monitors platform engagement patterns, analyzes interaction with events and content, and records browsing behavior\n        - Music Profile Analysis: Extracts and processes user playlist information, collects artist and track metadata, and categorizes music by various attributes\n        - Recommendation Engine: Uses collected data to generate personalized event suggestions, creates customized content feeds, and implements collaborative filtering\n        - Privacy Considerations: Transparent data collection policies, user control over data sharing preferences, and anonymization processes\n        \n        The system employs data analytics techniques to enhance user experience while maintaining appropriate privacy boundaries."
+                },
+                "utilities": {
+                    "description": "The utility services provide supporting functionality across the platform:\n        \n        - Account Settings: Comprehensive user preference management, notification controls, and privacy options\n        - Referral System: User invitation tracking, reward mechanisms for successful referrals, and conversion analytics\n        - Psychological Profiling: Analysis of music preferences to determine personality traits, behavioral pattern recognition, and creation of user preference profiles\n        - Cross-cutting Concerns: Email service integration for notifications, logging and monitoring infrastructure, and settings persistence\n        \n        These utility services enhance the core functionality of the platform while creating a more personalized user experience."
+                }
+            }
+        },
+        "simple-media-storage": {
+            "title": "Simple media storage",
+            "shortDescription": "Reusable media-storage for pet projects",
+            "fullDescription": "A comprehensive, secure, and scalable media management solution with robust features:\n\nArchitecture:\n- RESTful API design\n- JWT-based authentication\n- Dependency injection for modular service composition\n- Cross-origin resource sharing (CORS) support\n\nSecurity Features:\n- Policy-based authorization\n- File size limitations (5MB max)\n- Secure file path generation\n- ETag and caching support\n\nKey Endpoints:\n- Media upload (file/URL)\n- Media listing\n- Media retrieval with optional cropping\n- Media metadata update\n- Media deletion\n\nPerformance Optimizations:\n- Image compression\n- WebP conversion\n- Caching headers\n- Efficient file handling\n\nThe API represents a sophisticated, production-ready media storage and processing solution with a focus on flexibility, performance, and security."
+        },
+        "dbclient": {
+            "title": "DBClient",
+            "shortDescription": "A powerful C# database management client for a metallurgic factory",
+            "fullDescription": "DBClient is a comprehensive database management solution I developed specifically for PROMEKZ metallurgic factory.\n\nThe application provides a complete suite of tools for managing inventory, client relationships, and financial transactions. Users can track goods sold, monitor storage levels, maintain client records, calculate bills and debts, and provide credits all within a single interface.\n\nA key feature is the robust reporting system that auto-generates professional reports in multiple formats (doc, xlsx, PDF) using the RDLC report plugin.\n\nI also implemented a session journal that logs all system changes for accountability and security purposes, along with customizable color schemes to improve user experience."
+        },
+        "wpf-diagram-editor": {
+            "title": "WPF Diagram Editor",
+            "shortDescription": "A flexible tool for creating diagrams and visual representations",
+            "fullDescription": "The WPF Diagram Editor is a versatile application I built using Windows Presentation Foundation that enables users to create professional diagrams and visual representations.\n\nThis editor offers a comprehensive set of features including adding and resizing shapes, placing and customizing text, connecting shapes with lines and arrows, and importing custom shapes from uploaded images.\n\nOne of the most powerful aspects of this project is its export flexibility - diagrams can be saved as XML files for future editing, or exported as PNG and SVG files for sharing and presentations.\n\nI developed this project during my 3rd year of studies at HSE University as part of the \"Software Systems Architecture Design\" discipline, applying advanced concepts from Microsoft's WPF documentation, SVG path tutorials, and other professional resources."
+        },
+        "3dstruct-editor": {
+            "title": "3DStruct Editor",
+            "shortDescription": "A 3D modeling tool for creating round objects using splines",
+            "fullDescription": "3DStruct is an advanced 3D modeling editor I created that specializes in building round objects from simple lines using splines.\n\nBuilt with OpenGL, this application enables users to create complex 3D structures with an intuitive interface accessible even to beginners. The editor supports matrix conversions to modify objects and provides direct matrix manipulation for advanced users seeking precise control.\n\nWhat sets 3DStruct apart is its focus on transforming simple 2D lines into sophisticated 3D rounded objects through spline technology, making it particularly valuable for designers working with organic shapes and curved surfaces.\n\nThe software was designed with both usability and power in mind, featuring a clean interface for newcomers while offering deep mathematical controls for experienced 3D modelers."
+        },
+        "svo-airport-personnel-management": {
+            "title": "Airport Personnel Management System",
+            "shortDescription": "A real-time system that connects airport personnel to relevant tasks based on proximity and skills",
+            "fullDescription": "Developed during a hackathon, the SVO Airport Personnel Management System is an innovative solution designed to optimize airport operations by quickly matching personnel with tasks based on proximity and competencies.\n\nThe system features a Windows application with a comprehensive map view that displays real-time personnel locations throughout the airport. When issues arise, managers can use this interface to identify and notify the closest qualified staff members instantly.\n\nI implemented a complementary mobile application that handles notifications and precise location tracking using a combination of GPS and iBeacon technology. This dual-technology approach enables accurate positioning even within complex multi-floor airport environments.\n\nBy reducing response times and optimizing resource allocation, this system significantly improves operational efficiency and enhances the airport's ability to quickly resolve security issues, maintenance problems, and other challenges that arise in the fast-paced airport environment."
+        }
+    },
+    "buttons": {
+        "viewWork": "View My Work"
+    },
+    "footer": {
+        "copyright": "© 2025 George Nosachev. All rights reserved.",
+        "contact": "Contact"
+    }
+}

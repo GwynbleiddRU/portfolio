@@ -10,6 +10,8 @@ import MediaStorageImage from '../assets/images/projects/simple-media-storage.jp
 import MediaStorageApiImage from '../assets/images/projects/media-storage-images.jpg'
 import MediaStorageCropImage from '../assets/images/projects/media-storage-crops.jpg'
 
+import { useTranslation } from "react-i18next";
+
 export interface Project {
   id: string;
   title: string;

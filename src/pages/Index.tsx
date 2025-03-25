@@ -1,12 +1,12 @@
-
 import { useState, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/projectData";
 import Header from "@/components/Header";
-
-import portraitImage from '../assets/images/portrait.jpeg';
+import portraitImage from "../assets/images/portrait.jpeg";
+import { useTranslation } from "react-i18next";
 
 const Index = () => {
+  const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -23,18 +23,13 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6 md:pt-40 md:pb-32 max-w-7xl mx-auto">
         <div className="flex flex-col items-start max-w-3xl mx-auto">
           <span className="text-sm font-medium text-muted-foreground mb-4 animate-fade-in">
-            Fullstack developer
+            {t("hero.title")}
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 animate-slide-down">
-            Hi, I'm George Nosachev. <br /><br />
-            I create clear infrastructure for client-server communication specializing on secure API endpoints
+            {t("hero.greeting")} <br /><br />
+            {t("hero.description")}
           </h1>
-
-          <p className="text-lg text-muted-foreground mb-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
-            I'm a developer specializing in creating exceptional digital experiences.
-            Currently, I'm focused on exploring the opportunities of AI tools.
-          </p>
 
           <div className="animate-slide-up" style={{ animationDelay: "200ms" }}>
             <button
@@ -46,36 +41,32 @@ const Index = () => {
               }}
               className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             >
-              View My Work
+              {t("buttons.viewWork")}
             </button>
           </div>
-
-
         </div>
       </section>
 
       {/* About Section */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-12 items-center">
-          {/* About Me Text */}
           <div className="flex-1 order-2 md:order-1">
             <span className="text-sm font-medium text-muted-foreground mb-4 block">
-              About Me
+              {t("about.title")}
             </span>
             <h2 className="text-3xl font-bold tracking-tight mb-6">
-              Experienced Fullstack developer with deep knowledge of software engineering and extensive hands-on experience developing full-stack applications.
+              {t("about.description1")}
             </h2>
             <p className="text-muted-foreground mb-6">
-              I have extensive experience working with AI tools in development context with clear understanding of how good prompts should look like. Currently learning MCP for an even more native development process with AI.
+              {t("about.description2")}
             </p>
             <p className="text-muted-foreground mb-6">
-              I am most interested in developing APIs and logic for highly loaded systems.
+              {t("about.description3")}
             </p>
             <p className="text-muted-foreground">
-              English - C1, Spanish - A2, Russian - Native
+              {t("about.languages")}
             </p>
           </div>
-          {/* Portrait Image */}
           <div className="w-full md:w-1/3 order-1 md:order-2 mb-8 md:mb-0 px-8 md:px-0">
             <div className="aspect-square rounded-2xl overflow-hidden bg-muted">
               <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${portraitImage})` }}></div>
@@ -87,9 +78,11 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col items-start mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Projects</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">
+            {t("projects.title")}
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            A selection of my recent work. Each project is unique and showcases different skills and technologies.
+            {t("projects.description")}
           </p>
         </div>
 
@@ -105,7 +98,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <p className="text-sm text-muted-foreground">
-              © 2025 George Nosachev. All rights reserved.
+              {t("footer.copyright")}
             </p>
           </div>
 
@@ -120,7 +113,7 @@ const Index = () => {
               LinkedIn
             </a>
             <a href="mailto:nosachev.george@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Contact
+              {t("footer.contact")}
             </a>
           </div>
         </div>
