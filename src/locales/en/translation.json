@@ -42,7 +42,15 @@
         "simple-media-storage": {
             "title": "Simple media storage",
             "shortDescription": "Reusable media-storage for pet projects",
-            "fullDescription": "A comprehensive, secure, and scalable media management solution with robust features:\n\nArchitecture:\n- RESTful API design\n- JWT-based authentication\n- Dependency injection for modular service composition\n- Cross-origin resource sharing (CORS) support\n\nSecurity Features:\n- Policy-based authorization\n- File size limitations (5MB max)\n- Secure file path generation\n- ETag and caching support\n\nKey Endpoints:\n- Media upload (file/URL)\n- Media listing\n- Media retrieval with optional cropping\n- Media metadata update\n- Media deletion\n\nPerformance Optimizations:\n- Image compression\n- WebP conversion\n- Caching headers\n- Efficient file handling\n\nThe API represents a sophisticated, production-ready media storage and processing solution with a focus on flexibility, performance, and security."
+            "fullDescription": "A comprehensive, secure, and scalable media management solution with robust features:\n\nArchitecture:\n- RESTful API design\n- JWT-based authentication\n- Dependency injection for modular service composition\n- Cross-origin resource sharing (CORS) support\n\nSecurity Features:\n- Policy-based authorization\n- File size limitations (5MB max)\n- Secure file path generation\n- ETag and caching support\n\nKey Endpoints:\n- Media upload (file/URL)\n- Media listing\n- Media retrieval with optional cropping\n- Media metadata update\n- Media deletion\n\nPerformance Optimizations:\n- Image compression\n- WebP conversion\n- Caching headers\n- Efficient file handling\n\nThe API represents a sophisticated, production-ready media storage and processing solution with a focus on flexibility, performance, and security.",
+            "images": {
+                "imageProcessing": {
+                    "description": "The media storage system is a sophisticated, modular ASP.NET Core web API designed for efficient file management and image processing. \n        Key technological choices include:\n\n        - Database: MongoDB for flexible, document-based storage of media metadata\n        - File Storage: Physical file system storage with structured folder organization\n\n        Image Processing:\n\n        - Uses ImageMagick for advanced image manipulation\n        - Supports automatic image resizing and compression\n        - Converts uploaded images to WebP format for optimal web performance\n\n        Core Mechanics:\n\n        - Generate unique identifiers for each media item\n        - Support for storing metadata like owner, dimensions, file size\n        - Flexible file handling with automatic path generation\n        - Built-in caching and ETag support for efficient file serving\n\n        Notable Features:\n\n        - Maximum image dimension limit (1000 pixels)\n        - Automatic WebP conversion with 75% quality\n        - Center point tracking for intelligent cropping\n        - Support for uploads via file or URL"
+                },
+                "cropSpecification": {
+                    "description": "The crop specification system is a flexible, pre-configured image cropping mechanism that allows precise, reusable image cropping configurations:\n        \n        Technical Approach:\n\n        - Implemented as a repository-backed configuration system\n        - CRUD operations for crop specifications\n        - Supports multiple crop types and dimensions\n        - Dynamically generates crop variations of images\n\n        CropSpecification model with properties:\n\n        - Name: Unique identifier for the crop\n        - Width: Target crop width\n        - Height: Target crop height\n        - Type: Cropping algorithm/strategy\n\n        Workflow:\n\n        - Predefined crop specs can be created, updated, listed, and removed\n        - Media controller uses these specs to generate consistent image variations\n        - Enables intelligent, configurable image cropping without repeated calculations"
+                }
+            }
         },
         "dbclient": {
             "title": "DBClient",
@@ -64,6 +72,17 @@
             "shortDescription": "A real-time system that connects airport personnel to relevant tasks based on proximity and skills",
             "fullDescription": "Developed during a hackathon, the SVO Airport Personnel Management System is an innovative solution designed to optimize airport operations by quickly matching personnel with tasks based on proximity and competencies.\n\nThe system features a Windows application with a comprehensive map view that displays real-time personnel locations throughout the airport. When issues arise, managers can use this interface to identify and notify the closest qualified staff members instantly.\n\nI implemented a complementary mobile application that handles notifications and precise location tracking using a combination of GPS and iBeacon technology. This dual-technology approach enables accurate positioning even within complex multi-floor airport environments.\n\nBy reducing response times and optimizing resource allocation, this system significantly improves operational efficiency and enhances the airport's ability to quickly resolve security issues, maintenance problems, and other challenges that arise in the fast-paced airport environment."
         }
+    },
+    "projectDetail": {
+        "overview": "Project Overview",
+        "details": "Project Details",
+        "technologies": "Technologies",
+        "demo": "Demo",
+        "viewDemo": "View demo",
+        "liveSite": "Live",
+        "visitWebsite": "Visit website",
+        "codeRepository": "Code repository",
+        "viewOnGitHub": "View on GitHub"
     },
     "buttons": {
         "viewWork": "View My Work"

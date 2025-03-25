@@ -1,7 +1,7 @@
-
 import { Project } from "@/lib/projectData";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,6 +11,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   // Add a staggered animation delay based on index
   const getAnimationDelay = () => {
@@ -30,7 +31,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         onMouseLeave={() => setHovered(false)}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-10 opacity-80 transition-opacity duration-300" />
-        
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out"
@@ -39,7 +39,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             transform: hovered ? "scale(1.05)" : "scale(1)",
           }}
         />
-        
         {/* Content container */}
         <div className="relative z-20 h-full flex flex-col justify-end p-6">
           {/* Technologies */}
@@ -63,7 +62,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               </span>
             )}
           </div>
-          
           {/* Title */}
           <h3
             className="text-xl font-medium text-white mb-2 transition-transform duration-300"
@@ -71,9 +69,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               transform: hovered ? "translateY(0)" : "translateY(10px)",
             }}
           >
-            {project.title}
+            {t(project.title)}
           </h3>
-          
           {/* Description */}
           <p
             className="text-sm text-white/80 line-clamp-2 transition-all duration-500"
@@ -83,10 +80,9 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               maxHeight: hovered ? "3rem" : "0",
             }}
           >
-            {project.shortDescription}
+            {t(project.shortDescription)}
           </p>
         </div>
-        
         {/* View project overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
           <span className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium">

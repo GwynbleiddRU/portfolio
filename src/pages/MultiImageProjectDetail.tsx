@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getProjectById } from "@/lib/projectData";
 import Header from "@/components/Header";
 
@@ -7,6 +8,7 @@ const MultiImageProjectDetail = () => {
     const { id } = useParams<{ id: string }>();
     const [mounted, setMounted] = useState(false);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
+    const { t } = useTranslation();
 
     useEffect(() => {
         setMounted(true);
@@ -29,11 +31,11 @@ const MultiImageProjectDetail = () => {
             {/* Hero Section */}
             <section className="pt-32 pb-12 px-6 max-w-7xl mx-auto animate-fade-in">
                 <span className="text-sm font-medium text-muted-foreground mb-4 block">
-                    Project
+                    {t("projects.title")}
                 </span>
 
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                    {project.title}
+                    {t(project.title)}
                 </h1>
 
                 <div className="flex flex-wrap gap-2 mb-8">
@@ -62,7 +64,7 @@ const MultiImageProjectDetail = () => {
                 {project.images[activeImageIndex].description && (
                     <div className="mb-8 prose prose-lg dark:prose-invert max-w-none animate-fade-in">
                         <p className="text-muted-foreground whitespace-pre-line">
-                            {project.images[activeImageIndex].description}
+                            {t(project.images[activeImageIndex].description)}
                         </p>
                     </div>
                 )}
@@ -91,10 +93,12 @@ const MultiImageProjectDetail = () => {
             <section className="py-16 px-6 max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "200ms" }}>
-                        <h2 className="text-2xl font-semibold mb-6">Project Overview</h2>
+                        <h2 className="text-2xl font-semibold mb-6">
+                            {t("projectDetail.overview")}
+                        </h2>
 
                         <div className="prose prose-lg dark:prose-invert max-w-none">
-                            {project.fullDescription.split('\n').map((paragraph, i) => (
+                            {t(project.fullDescription).split('\n').map((paragraph, i) => (
                                 <p key={i} className="mb-4 text-muted-foreground">
                                     {paragraph.trim()}
                                 </p>
@@ -104,13 +108,15 @@ const MultiImageProjectDetail = () => {
 
                     <div className="animate-slide-up" style={{ animationDelay: "300ms" }}>
                         <div className="sticky top-32">
-                            <h3 className="text-xl font-semibold mb-6">Project Details</h3>
+                            <h3 className="text-xl font-semibold mb-6">
+                                {t("projectDetail.details")}
+                            </h3>
 
                             <div className="space-y-6">
                                 {project.liveUrl && (
                                     <div>
                                         <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                                            Live Site
+                                            {t("projectDetail.liveSite")}
                                         </h4>
                                         <a
                                             href={project.liveUrl}
@@ -118,7 +124,7 @@ const MultiImageProjectDetail = () => {
                                             rel="noopener noreferrer"
                                             className="text-primary underline hover:no-underline"
                                         >
-                                            Visit Website
+                                            {t("projectDetail.visitWebsite")}
                                         </a>
                                     </div>
                                 )}
@@ -126,7 +132,7 @@ const MultiImageProjectDetail = () => {
                                 {project.demoUrl && (
                                     <div>
                                         <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                                            Demo
+                                            {t("projectDetail.demo")}
                                         </h4>
                                         <a
                                             href={project.demoUrl}
@@ -134,7 +140,7 @@ const MultiImageProjectDetail = () => {
                                             rel="noopener noreferrer"
                                             className="text-primary underline hover:no-underline"
                                         >
-                                            View demo
+                                            {t("projectDetail.viewDemo")}
                                         </a>
                                     </div>
                                 )}
@@ -142,7 +148,7 @@ const MultiImageProjectDetail = () => {
                                 {project.githubUrl && (
                                     <div>
                                         <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                                            Code Repository
+                                            {t("projectDetail.codeRepository")}
                                         </h4>
                                         <a
                                             href={project.githubUrl}
@@ -150,14 +156,14 @@ const MultiImageProjectDetail = () => {
                                             rel="noopener noreferrer"
                                             className="text-primary underline hover:no-underline"
                                         >
-                                            View on GitHub
+                                            {t("projectDetail.viewOnGitHub")}
                                         </a>
                                     </div>
                                 )}
 
                                 <div>
                                     <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                                        Technologies
+                                        {t("projectDetail.technologies")}
                                     </h4>
                                     <ul className="space-y-1">
                                         {project.technologies.map((tech, i) => (
@@ -179,7 +185,7 @@ const MultiImageProjectDetail = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="mb-6 md:mb-0">
                             <p className="text-sm text-muted-foreground">
-                                © 2025 George Nosachev. All rights reserved.
+                                {t("footer.copyright")}
                             </p>
                         </div>
 
@@ -194,7 +200,7 @@ const MultiImageProjectDetail = () => {
                                 LinkedIn
                             </a>
                             <a href="mailto:nosachev.george@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                                Contact
+                                {t("footer.contact")}
                             </a>
                         </div>
                     </div>
