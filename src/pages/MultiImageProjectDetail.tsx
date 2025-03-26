@@ -191,7 +191,7 @@ const MultiImageProjectDetail = () => {
 
                         <div className="flex items-center space-x-6">
                             <a href="https://t.me/dbops" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                                Telegram
+                                ★ Telegram
                             </a>
                             <a href="https://github.com/GwynbleiddRU" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                                 GitHub
@@ -199,7 +199,7 @@ const MultiImageProjectDetail = () => {
                             <a href="https://www.linkedin.com/in/george-nosachev-8a9938326/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                                 LinkedIn
                             </a>
-                            <a href="mailto:nosachev.george@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            <a href="mailto:nosachev.george@mail.ru" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                                 {t("footer.contact")}
                             </a>
                         </div>
