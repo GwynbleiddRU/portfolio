@@ -10,7 +10,7 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const isProjectPage = location.pathname.includes("/project/");
 
@@ -61,7 +61,7 @@ const Header = () => {
             href="/portfolio/"
             className="text-lg font-medium tracking-tight hover:opacity-80 transition-opacity"
           >
-            George Nosachev
+            {t("websiteName")}
           </a>
         </div>
 
@@ -69,13 +69,13 @@ const Header = () => {
           {/* Language Switcher */}
           <div className="flex space-x-2 border border-gray-300 dark:border-gray-600 rounded-full p-1">
             <button
-              className={`px-3 py-1 text-sm font-medium rounded-full transition-colors ${i18n.language === "en" ? "bg-primary text-white" : "text-gray-600 dark:text-gray-300"}`}
+              className={`px-3 py-1 text-sm font-medium rounded-full transition-colors ${i18n.language === "en" ? "bg-primary text-white dark:text-gray-600" : "text-gray-600 dark:text-gray-300"}`}
               onClick={() => changeLanguage("en")}
             >
               EN
             </button>
             <button
-              className={`px-3 py-1 text-sm font-medium rounded-full transition-colors ${i18n.language === "ru" ? "bg-primary text-white" : "text-gray-600 dark:text-gray-300"}`}
+              className={`px-3 py-1 text-sm font-medium rounded-full transition-colors ${i18n.language === "ru" ? "bg-primary text-white dark:text-gray-600" : "text-gray-600 dark:text-gray-300"}`}
               onClick={() => changeLanguage("ru")}
             >
               RU
