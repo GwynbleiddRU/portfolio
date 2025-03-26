@@ -166,7 +166,7 @@ const ProjectDetail = () => {
               <a href="https://github.com/GwynbleiddRU" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 GitHub
               </a>
-              <a href="https://www.linkedin.com/in/george-nosachev-8a9938326/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://www.linkedin.com/in/george-nosachev/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 LinkedIn
               </a>
               <a href="mailto:nosachev.george@mail.ru" className="text-sm text-muted-foreground hover:text-foreground transition-colors">

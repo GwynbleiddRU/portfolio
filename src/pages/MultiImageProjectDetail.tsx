@@ -60,15 +60,6 @@ const MultiImageProjectDetail = () => {
                     />
                 </div>
 
-                {/* Image Description */}
-                {project.images[activeImageIndex].description && (
-                    <div className="mb-8 prose prose-lg dark:prose-invert max-w-none animate-fade-in">
-                        <p className="text-muted-foreground whitespace-pre-line">
-                            {t(project.images[activeImageIndex].description)}
-                        </p>
-                    </div>
-                )}
-
                 {/* Thumbnail Gallery */}
                 {project.images.length > 1 && (
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-8">
@@ -85,6 +76,15 @@ const MultiImageProjectDetail = () => {
                                 />
                             </div>
                         ))}
+                    </div>
+                )}
+
+                {/* Image Description */}
+                {project.images[activeImageIndex].description && (
+                    <div className="mb-8 prose prose-lg dark:prose-invert max-w-none animate-fade-in">
+                        <p className="text-muted-foreground whitespace-pre-line">
+                            {t(project.images[activeImageIndex].description)}
+                        </p>
                     </div>
                 )}
             </section>
@@ -196,7 +196,7 @@ const MultiImageProjectDetail = () => {
                             <a href="https://github.com/GwynbleiddRU" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                                 GitHub
                             </a>
-                            <a href="https://www.linkedin.com/in/george-nosachev-8a9938326/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            <a href="https://www.linkedin.com/in/george-nosachev/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                                 LinkedIn
                             </a>
                             <a href="mailto:nosachev.george@mail.ru" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
