@@ -10,6 +10,8 @@ const MultiImageProjectDetail = () => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const { t } = useTranslation();
 
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
     useEffect(() => {
         setMounted(true);
         // Scroll to top on page load
@@ -107,7 +109,7 @@ const MultiImageProjectDetail = () => {
                     </div>
 
                     <div className="animate-slide-up" style={{ animationDelay: "300ms" }}>
-                        <div className="sticky top-32">
+                        <div className={isSafari ? "top-32" : "sticky top-32"}>
                             <h3 className="text-xl font-semibold mb-6">
                                 {t("projectDetail.details")}
                             </h3>
