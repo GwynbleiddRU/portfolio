@@ -22,9 +22,20 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 md:pt-40 md:pb-32 max-w-7xl mx-auto">
         <div className="flex flex-col items-start max-w-3xl mx-auto">
-          <span className="text-sm font-medium text-muted-foreground mb-4 animate-fade-in">
-            {t("hero.title")}
-          </span>
+          <div className="flex items-center gap-4 w-full justify-between mb-4">
+            <span className="text-sm font-medium text-muted-foreground animate-fade-in">
+              {t("hero.title")}
+            </span>
+            <a
+              href="https://gwynbleiddru.github.io/cv-webpage/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/20 transition-all duration-200 h-12 w-12 text-base font-medium text-primary shadow-sm hover:shadow-md cursor-pointer"
+              title="View CV"
+            >
+              CV
+            </a>
+          </div>
 
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 animate-slide-down">
             {t("hero.greeting")} <br /><br />
