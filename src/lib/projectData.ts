@@ -67,6 +67,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "",
     githubUrl: "https://github.com/TuneLike/tunelike-api",
+    demoUrl: "https://www.youtube.com/watch?v=-gg0hxVYrOU",
     template: "multi-image"
   },
   {
