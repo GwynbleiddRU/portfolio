@@ -59,9 +59,16 @@ const Header = () => {
           )}
           <a
             href="/portfolio/"
-            className="text-lg font-medium tracking-tight hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity"
           >
-            {t("websiteName")}
+            <div className="flex flex-col leading-tight">
+              <span className="text-lg font-medium tracking-tight">
+                {t("websiteName")}
+              </span>
+              <span className="text-sm font-medium text-muted-foreground animate-fade-in">
+                {t("hero.title")}
+              </span>
+            </div>
           </a>
         </div>
 

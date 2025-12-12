@@ -22,42 +22,36 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 md:pt-40 md:pb-32 max-w-7xl mx-auto">
         <div className="flex flex-col items-start max-w-3xl mx-auto">
-          <div className="flex items-center gap-4 w-full justify-between mb-4">
-            <span className="text-sm font-medium text-muted-foreground animate-fade-in">
-              {t("hero.title")}
-            </span>
-          </div>
-
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 animate-slide-down">
             {t("hero.greeting")} <br /><br />
             {t("hero.description")}
           </h1>
 
-         <div
-           className="mt-8 animate-slide-up flex flex-col space-y-1 md:mt-8 md:flex-row md:space-y-0 md:space-x-1 md:w-auto"
-           style={{ animationDelay: "200ms" }}
-         >
-            <button
-              onClick={() => {
-                const section = document.getElementById("projects");
-                if (section) {
-                  section.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
-            >
-              {t("buttons.viewWork")}
-            </button>
-            <a
-              href="https://gwynbleiddru.github.io/cv-webpage/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
-              title="View CV"
-              >
-              {t("buttons.viewCV")}
-            </a>
-          </div>
+        <div
+          className="mt-8 animate-slide-up flex flex-col space-y-1 md:mt-8 md:flex-row md:space-y-0 md:space-x-1 md:w-auto"
+          style={{ animationDelay: "200ms" }}
+        >
+          <button
+            onClick={() => {
+              const section = document.getElementById("projects");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
+          >
+            {t("buttons.viewWork")}
+          </button>
+          <a
+            href="https://gwynbleiddru.github.io/cv-webpage/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
+            title="View CV"
+          >
+            {t("buttons.viewCV")}
+          </a>
+        </div>
         </div>
       </section>
 
