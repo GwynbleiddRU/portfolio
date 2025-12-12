@@ -1,14 +1,19 @@
-import TLApiImage from '../assets/images/projects/tunelike-api.jpg';
-import TLApiAuthImage from '../assets/images/projects/tunelike-api-auth.jpg';
-import TLApiChatImage from '../assets/images/projects/tunelike-api-chat.jpg';
-import TLApiDatingImage from '../assets/images/projects/tunelike-api-dating.jpg';
-import TLApiEventsImage from '../assets/images/projects/tunelike-api-events.jpg';
-import TLApiDataImage from '../assets/images/projects/tunelike-api-data.jpg';
-import TLApiUtilitiesImage from '../assets/images/projects/tunelike-api-utilities.jpg';
+import TLApiImage from '../assets/images/projects/tunelike-api/tunelike-api.avif';
+import TLApiAuthImage from '../assets/images/projects/tunelike-api/tunelike-api-auth.avif';
+import TLApiChatImage from '../assets/images/projects/tunelike-api/tunelike-api-chat.avif';
+import TLApiDatingImage from '../assets/images/projects/tunelike-api/tunelike-api-dating.avif';
+import TLApiEventsImage from '../assets/images/projects/tunelike-api/tunelike-api-events.avif';
+import TLApiDataImage from '../assets/images/projects/tunelike-api/tunelike-api-data.avif';
+import TLApiUtilitiesImage from '../assets/images/projects/tunelike-api/tunelike-api-utilities.avif';
 
-import MediaStorageImage from '../assets/images/projects/simple-media-storage.jpg'
-import MediaStorageApiImage from '../assets/images/projects/media-storage-images.jpg'
-import MediaStorageCropImage from '../assets/images/projects/media-storage-crops.jpg'
+import MediaStorageImage from '../assets/images/projects/media-storage/simple-media-storage.avif';
+import MediaStorageApiImage from '../assets/images/projects/media-storage/media-storage-images.avif';
+import MediaStorageCropImage from '../assets/images/projects/media-storage/media-storage-crops.avif';
+
+import DBClientImage from '../assets/images/projects/dbclient.avif';
+import ObjectEditorImage from '../assets/images/projects/object-editor.avif';
+import NodesImage from '../assets/images/projects/nodes.avif';
+import SVOManagementImage from '../assets/images/projects/svo-management.avif';
 
 export interface Project {
   id: string;
@@ -98,7 +103,7 @@ export const projects: Project[] = [
     shortDescription: "projects.dbclient.shortDescription",
     fullDescription: "projects.dbclient.fullDescription",
     technologies: ["C#", ".NET", "WPF", "MSSQL", "ADO.NET", "EntityFramework", "RDLC Reports"],
-    imageUrl: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+    imageUrl: DBClientImage,
     liveUrl: "",
     demoUrl: "https://www.youtube.com/watch?v=VNeDhh1Ge9U",
     githubUrl: "https://github.com/GwynbleiddRU/DBClient",
@@ -111,7 +116,7 @@ export const projects: Project[] = [
     shortDescription: "projects.wpf-diagram-editor.shortDescription",
     fullDescription: "projects.wpf-diagram-editor.fullDescription",
     technologies: ["C#", "WPF", "XAML", "XML", "SVG"],
-    imageUrl: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80",
+    imageUrl: NodesImage,
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/Nodes",
     featured: false,
@@ -123,7 +128,7 @@ export const projects: Project[] = [
     shortDescription: "projects.3dstruct-editor.shortDescription",
     fullDescription: "projects.3dstruct-editor.fullDescription",
     technologies: ["OpenGL", "C++", "3D Modeling", "Spline Technology", "Matrix Transformations"],
-    imageUrl: "https://images.unsplash.com/photo-1545665277-5937489579f2?auto=format&fit=crop&w=800&q=80",
+    imageUrl: ObjectEditorImage,
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/3DStruct",
     featured: true,
@@ -135,7 +140,7 @@ export const projects: Project[] = [
     shortDescription: "projects.svo-airport-personnel-management.shortDescription",
     fullDescription: "projects.svo-airport-personnel-management.fullDescription",
     technologies: ["C#", "Windows Application Development", "Mobile Development", "GPS Integration", "iBeacon Technology"],
-    imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
+    imageUrl: SVOManagementImage,
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/SVO_Management",
     featured: true,
