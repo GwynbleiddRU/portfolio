@@ -26,15 +26,6 @@ const Index = () => {
             <span className="text-sm font-medium text-muted-foreground animate-fade-in">
               {t("hero.title")}
             </span>
-            <a
-              href="https://gwynbleiddru.github.io/cv-webpage/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/20 transition-all duration-200 h-12 w-12 text-base font-medium text-primary shadow-sm hover:shadow-md cursor-pointer"
-              title="View CV"
-            >
-              CV
-            </a>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 animate-slide-down">
@@ -42,7 +33,10 @@ const Index = () => {
             {t("hero.description")}
           </h1>
 
-          <div className="animate-slide-up" style={{ animationDelay: "200ms" }}>
+         <div
+           className="mt-8 animate-slide-up flex flex-col space-y-1 md:mt-8 md:flex-row md:space-y-0 md:space-x-1 md:w-auto"
+           style={{ animationDelay: "200ms" }}
+         >
             <button
               onClick={() => {
                 const section = document.getElementById("projects");
@@ -50,10 +44,19 @@ const Index = () => {
                   section.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring mt-8"
+              className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
             >
               {t("buttons.viewWork")}
             </button>
+            <a
+              href="https://gwynbleiddru.github.io/cv-webpage/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
+              title="View CV"
+              >
+              {t("buttons.viewCV")}
+            </a>
           </div>
         </div>
       </section>

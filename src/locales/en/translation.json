@@ -86,7 +86,8 @@
         "viewOnGitHub": "View on GitHub"
     },
     "buttons": {
-        "viewWork": "View My Work"
+        "viewWork": "View my work",
+        "viewCV": "Check my CV"
     },
     "footer": {
         "copyright": "© 2025 George Nosachev. All rights reserved.",
