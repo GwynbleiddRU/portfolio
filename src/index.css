@@ -90,6 +90,11 @@
   .dark .glass {
     @apply bg-black/20 backdrop-blur-md border border-white/10;
   }
+
+  .typewriter {
+    display: inline-block;
+    white-space: nowrap;
+  }
 }
 
 /* Page transition styles */

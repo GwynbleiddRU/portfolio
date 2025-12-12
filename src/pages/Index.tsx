@@ -8,10 +8,28 @@ import { useTranslation } from "react-i18next";
 const Index = () => {
   const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
+  const [typedGreeting, setTypedGreeting] = useState("");
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    const text = t("hero.greeting");
+    setTypedGreeting("");
+
+    let index = 0;
+    const interval = setInterval(() => {
+      index += 1;
+      setTypedGreeting(text.slice(0, index));
+
+      if (index >= text.length) {
+        clearInterval(interval);
+      }
+    }, 60);
+
+    return () => clearInterval(interval);
+  }, [t]);
 
   if (!mounted) return null;
 
@@ -23,7 +41,11 @@ const Index = () => {
       <section className="pt-32 pb-4 px-6 md:pt-40 md:pb-20 max-w-7xl mx-auto">
         <div className="flex flex-col items-start max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 animate-slide-down mr-4 ml-4">
-            {t("hero.greeting")} <br /><br />
+            <span className="typewriter">
+              {typedGreeting}
+            </span>
+            <br />
+            <br />
             {t("hero.description")}
           </h1>
 
