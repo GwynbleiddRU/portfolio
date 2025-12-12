@@ -139,7 +139,7 @@ export const projects: Project[] = [
     title: "projects.svo-airport-personnel-management.title",
     shortDescription: "projects.svo-airport-personnel-management.shortDescription",
     fullDescription: "projects.svo-airport-personnel-management.fullDescription",
-    technologies: ["C#", "Windows Application Development", "Mobile Development", "GPS Integration", "iBeacon Technology"],
+    technologies: ["C#", "Java Android", "GPS", "iBeacon", "Windows Forms"],
     imageUrl: SVOManagementImage,
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/SVO_Management",
