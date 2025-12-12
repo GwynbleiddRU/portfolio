@@ -20,15 +20,15 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 md:pt-40 md:pb-32 max-w-7xl mx-auto">
+      <section className="pt-32 pb-4 px-6 md:pt-40 md:pb-20 max-w-7xl mx-auto">
         <div className="flex flex-col items-start max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 animate-slide-down">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 animate-slide-down mr-4 ml-4">
             {t("hero.greeting")} <br /><br />
             {t("hero.description")}
           </h1>
 
         <div
-          className="mt-8 animate-slide-up flex flex-col space-y-1 md:mt-8 md:flex-row md:space-y-0 md:space-x-1 md:w-auto"
+          className="mt-8 w-full pl-4 pr-4 animate-slide-up flex flex-col items-center space-y-1 md:mt-8 md:flex-row md:items-start md:space-y-0 md:space-x-1 md:w-auto"
           style={{ animationDelay: "200ms" }}
         >
           <button
@@ -84,7 +84,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 max-w-7xl mx-auto">
+      <section id="projects" className="pt-4 pb-20 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col items-start mb-12">
           <h2 className="text-3xl font-bold tracking-tight mb-4">
             {t("projects.title")}
