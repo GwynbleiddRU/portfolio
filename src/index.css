@@ -93,6 +93,11 @@
 
   .typewriter {
     display: inline-block;
+  }
+}
+
+@media (min-width: 560px) {
+  .typewriter {
     white-space: nowrap;
   }
 }
