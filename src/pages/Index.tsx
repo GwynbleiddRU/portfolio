@@ -60,7 +60,7 @@ const Index = () => {
                 section.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
+            className="inline-flex h-11 md:mr-4 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:w-auto"
           >
             {t("buttons.viewWork")}
           </button>
