@@ -15,6 +15,12 @@ import ObjectEditorImage from '../assets/images/projects/object-editor.avif';
 import NodesImage from '../assets/images/projects/nodes.avif';
 import SVOManagementImage from '../assets/images/projects/svo-management.avif';
 
+import CSSCheatsheet from '../assets/images/projects/css-cheatsheet/css-cheatsheet.avif';
+import CSSCheatsheetExample from '../assets/images/projects/css-cheatsheet/css-explorer-example.avif';
+import CSSCheatsheetProperties from '../assets/images/projects/css-cheatsheet/css-explorer-properties.avif';
+import CSSCheatsheetSelectors from '../assets/images/projects/css-cheatsheet/css-explorer-selectors.avif';
+import CSSCheatsheetMobile from '../assets/images/projects/css-cheatsheet/css-explorer-mobile.avif';
+
 export interface Project {
   id: string;
   title: string;
@@ -94,6 +100,32 @@ export const projects: Project[] = [
     ],
     liveUrl: "",
     githubUrl: "",
+    featured: true,
+    template: "multi-image"
+  },
+  {
+    id: "css-cheatsheet",
+    title: "projects.css-cheatsheet.title",
+    shortDescription: "projects.css-cheatsheet.shortDescription",
+    fullDescription: "projects.css-cheatsheet.fullDescription",
+    technologies: ["typescript", "tailwind", "shadcn/ui", "i18next", "vite"],
+    imageUrl: CSSCheatsheet,
+    images: [
+      {
+        url: CSSCheatsheetProperties,
+      },
+      {
+        url: CSSCheatsheetExample,
+      },
+      {
+        url: CSSCheatsheetSelectors,
+      },
+      {
+        url: CSSCheatsheetMobile,
+      }
+    ],
+    liveUrl: "https://gwynbleiddru.github.io/css-explorer",
+    githubUrl: "https://github.com/GwynbleiddRU/css-explorer",
     featured: true,
     template: "multi-image"
   },
