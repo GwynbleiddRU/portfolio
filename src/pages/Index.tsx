@@ -78,28 +78,37 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="flex-1 order-2 md:order-1">
-            <span className="text-sm font-medium text-muted-foreground mb-4 block">
+      <section className="py-16 px-6 md:py-20 max-w-7xl mx-auto">
+        <div className="relative overflow-hidden rounded-3xl border border-white/20 shadow-2xl">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${portraitImage})` }}
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/55" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" aria-hidden="true" />
+
+          <div className="relative z-10 px-6 py-10 md:px-10 md:py-14 lg:px-16">
+            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground/90 mb-4 block">
               {t("about.title")}
             </span>
-            <h2 className="text-3xl font-bold tracking-tight mb-6">
-              {t("about.description1")}
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              {t("about.description2")}
-            </p>
-            <p className="text-muted-foreground mb-6">
-              {t("about.description3")}
-            </p>
-            <p className="text-muted-foreground">
-              {t("about.languages")}
-            </p>
-          </div>
-          <div className="w-full md:w-1/3 order-1 md:order-2 mb-8 md:mb-0 px-8 md:px-0">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-muted">
-              <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${portraitImage})` }}></div>
+
+            <div className="max-w-3xl">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6 leading-tight">
+                {t("about.description1")}
+              </h2>
+            </div>
+
+            <div className="max-w-3xl space-y-5">
+              <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
+                {t("about.description2")}
+              </p>
+              <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
+                {t("about.description3")}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed pt-2 border-t border-border/40 max-w-2xl">
+                {t("about.languages")}
+              </p>
             </div>
           </div>
         </div>
