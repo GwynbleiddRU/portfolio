@@ -3,6 +3,7 @@ import { projects } from "@/lib/projectData";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import portraitImage from "../assets/images/portrait.jpeg";
+import { Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type LanguageEntry = {
@@ -27,7 +28,16 @@ const Index = () => {
         <div className="hero__content">
           <span className="hero__eyebrow">{t("hero.greeting")}</span>
           <h1 className="hero__name">{t("websiteName")}</h1>
-          <p className="hero__tagline">{t("hero.title")}</p>
+          <div className="hero__tagline-row">
+            <p className="hero__tagline">{t("hero.title")}</p>
+            <a
+              href="mailto:nosachev.gosha@gmail.com"
+              className="hero__mail"
+              aria-label={t("footer.contact")}
+            >
+              <Mail aria-hidden="true" />
+            </a>
+          </div>
           <p className="hero__description">{t("hero.description")}</p>
 
           <div className="hero__actions btn-group">
