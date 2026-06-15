@@ -59,8 +59,8 @@
     flex-shrink: 0;
     width: var(--hero-tagline-height);
     height: var(--hero-tagline-height);
-    background: #fff;
-    color: #000;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     svg {

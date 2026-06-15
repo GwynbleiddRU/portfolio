@@ -24,6 +24,8 @@ const MultiImageProjectDetail = () => {
 
   if (!mounted) return null;
 
+  const activeImage = project.images[activeImageIndex];
+
   return (
     <div className="page">
       <Header />
@@ -38,49 +40,6 @@ const MultiImageProjectDetail = () => {
             </span>
           ))}
         </div>
-      </section>
-
-      <section
-        className="section section--project-media animate-slide-up"
-        style={{ animationDelay: "100ms" }}
-      >
-        <div className="project-detail__media">
-          <div
-            className="project-detail__media-image"
-            style={{
-              backgroundImage: `url(${project.images[activeImageIndex].url})`,
-            }}
-          />
-        </div>
-
-        {project.images.length > 1 && (
-          <div className="project-detail__gallery">
-            {project.images.map((image, index) => (
-              <button
-                key={index}
-                type="button"
-                className={`project-detail__thumb ${
-                  index === activeImageIndex
-                    ? "project-detail__thumb--active"
-                    : ""
-                }`}
-                onClick={() => setActiveImageIndex(index)}
-                aria-label={`View image ${index + 1}`}
-              >
-                <div
-                  className="project-detail__thumb-image"
-                  style={{ backgroundImage: `url(${image.url})` }}
-                />
-              </button>
-            ))}
-          </div>
-        )}
-
-        {project.images[activeImageIndex].description && (
-          <p className="project-detail__caption animate-fade-in">
-            {t(project.images[activeImageIndex].description)}
-          </p>
-        )}
       </section>
 
       <section className="section section--project-content">
@@ -165,6 +124,61 @@ const MultiImageProjectDetail = () => {
               </ul>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section
+        className="section section--project-gallery animate-slide-up"
+        style={{ animationDelay: "400ms" }}
+      >
+        <h2 className="project-detail__gallery-title">
+          {t("projectDetail.moreAbout")}
+        </h2>
+
+        <div className="project-detail__carousel-panel">
+          <div className="project-detail__carousel-visual">
+            <div className="project-detail__media">
+              <div
+                className="project-detail__media-image"
+                style={{
+                  backgroundImage: `url(${activeImage.url})`,
+                }}
+              />
+            </div>
+
+            {project.images.length > 1 && (
+              <div className="project-detail__gallery">
+                {project.images.map((image, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={`project-detail__thumb ${
+                      index === activeImageIndex
+                        ? "project-detail__thumb--active"
+                        : ""
+                    }`}
+                    onClick={() => setActiveImageIndex(index)}
+                    aria-label={`View image ${index + 1}`}
+                    aria-current={index === activeImageIndex}
+                  >
+                    <div
+                      className="project-detail__thumb-image"
+                      style={{ backgroundImage: `url(${image.url})` }}
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {activeImage.description && (
+            <div
+              key={activeImageIndex}
+              className="project-detail__caption animate-fade-in"
+            >
+              <p>{t(activeImage.description)}</p>
+            </div>
+          )}
         </div>
       </section>
 

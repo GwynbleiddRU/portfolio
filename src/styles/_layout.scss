@@ -77,5 +77,10 @@
 }
 
 .section--project-content {
-  padding-block: 4rem;
+  padding-block: 4rem 2rem;
+}
+
+.section--project-gallery {
+  padding-top: 2rem;
+  padding-bottom: clamp(4rem, 8vw, 6rem);
 }

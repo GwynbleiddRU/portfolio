@@ -92,7 +92,8 @@
         "liveSite": "Live",
         "visitWebsite": "Visit website",
         "codeRepository": "Code repository",
-        "viewOnGitHub": "View on GitHub"
+        "viewOnGitHub": "View on GitHub",
+        "moreAbout": "More about project"
     },
     "buttons": {
         "viewWork": "View my work",
