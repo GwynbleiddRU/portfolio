@@ -1,0 +1,51 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.footer {
+  padding-block: 3rem;
+  border-top: 1px solid hsl(var(--border));
+  background: hsl(var(--foreground));
+  color: hsl(var(--primary-foreground));
+
+  &__inner {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+
+    @include respond-to(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.8125rem;
+    color: hsl(var(--primary-foreground) / 0.7);
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+  }
+
+  &__link {
+    font-size: 0.8125rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--primary-foreground) / 0.72);
+    transition: color $transition-fast, transform $transition-fast;
+
+    &:hover {
+      color: hsl(var(--primary-foreground));
+      transform: translateY(-1px);
+    }
+  }
+}

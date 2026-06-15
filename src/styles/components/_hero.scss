@@ -1,0 +1,150 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.hero {
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 62rem;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    animation: slide-down 0.5s ease-out both;
+
+    &::before {
+      content: "";
+      width: clamp(2rem, 8vw, 6rem);
+      height: 1px;
+      background: hsl(var(--foreground));
+    }
+  }
+
+  &__name {
+    display: block;
+    font-family: $font-display;
+    font-size: clamp(4rem, 16vw, 13rem);
+    font-weight: 900;
+    line-height: 0.78;
+    margin: 0;
+    max-width: 11ch;
+    text-transform: uppercase;
+    animation: slide-down 0.5s ease-out both;
+  }
+
+  &__tagline {
+    width: fit-content;
+    margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+    padding: 0.4rem 0.8rem;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: hsl(var(--primary-foreground));
+    background: hsl(var(--primary));
+    transform: rotate(-1deg);
+    animation: slide-up 0.5s ease-out 0.05s both;
+  }
+
+  &__description {
+    font-size: clamp(1.0625rem, 2vw, 1.35rem);
+    font-weight: 500;
+    line-height: 1.5;
+    color: hsl(var(--muted-foreground));
+    margin-top: 1.75rem;
+    max-width: 43rem;
+    animation: slide-up 0.5s ease-out 0.1s both;
+  }
+
+  &__actions {
+    margin-top: 2.5rem;
+    animation: slide-up 0.5s ease-out 0.2s both;
+  }
+
+  &__grid,
+  &__orb {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &__grid {
+    inset: 12% -8% auto auto;
+    width: min(56vw, 40rem);
+    aspect-ratio: 1;
+    border: 1px solid hsl(var(--foreground) / 0.18);
+    background:
+      linear-gradient(45deg, transparent 48%, hsl(var(--foreground) / 0.16) 49%, hsl(var(--foreground) / 0.16) 51%, transparent 52%),
+      repeating-linear-gradient(90deg, hsl(var(--foreground) / 0.08) 0 1px, transparent 1px 3rem);
+    clip-path: polygon(18% 0, 100% 13%, 82% 100%, 0 82%);
+    opacity: 0.55;
+    transform: rotate(8deg);
+  }
+
+  &__orb {
+    border-radius: 50%;
+    border: 1px solid hsl(var(--foreground) / 0.16);
+    background:
+      radial-gradient(circle at 36% 32%, hsl(var(--foreground) / 0.16), transparent 32%),
+      hsl(var(--card) / 0.52);
+    box-shadow: $shadow-md;
+  }
+
+  &__orb--one {
+    right: 7%;
+    bottom: 16%;
+    width: clamp(5rem, 12vw, 10rem);
+    aspect-ratio: 1;
+    animation: float-soft 8s ease-in-out infinite;
+  }
+
+  &__orb--two {
+    right: 29%;
+    top: 23%;
+    width: clamp(2.5rem, 6vw, 4.75rem);
+    aspect-ratio: 1;
+    animation: float-soft 10s ease-in-out infinite reverse;
+  }
+
+  &__signature {
+    display: none;
+
+    @include respond-to(md) {
+      display: block;
+      position: absolute;
+      right: 1.5rem;
+      bottom: 3rem;
+      writing-mode: vertical-rl;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: hsl(var(--muted-foreground));
+
+      span + span {
+        margin-top: 0.8rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    &__grid {
+      inset: 9% -35% auto auto;
+      width: 28rem;
+      opacity: 0.28;
+    }
+
+    &__orb--one {
+      right: -2rem;
+      bottom: 11%;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.about {
+  &__card {
+    position: relative;
+    overflow: visible;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card) / 0.72);
+    box-shadow: $shadow-md;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border: 1px solid hsl(var(--foreground) / 0.08);
+      pointer-events: none;
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding: clamp(1.25rem, 4vw, 4rem);
+
+    @include respond-to(md) {
+      grid-template-columns: minmax(16rem, 0.78fr) 1.22fr;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    max-width: 46rem;
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__headline {
+    font-size: clamp(2rem, 4.7vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 0.98;
+  }
+
+  &__text {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.75;
+    color: hsl(var(--muted-foreground));
+
+    & + & {
+      margin-top: 1rem;
+    }
+
+    @include respond-to(md) {
+      font-size: 1.0625rem;
+    }
+  }
+
+  &__languages {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    margin: 1.8rem 0 0;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: hsl(var(--foreground));
+  }
+
+  &__language-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  &__language-level {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0.25rem 0.4rem;
+    font-size: 0.6875rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: hsl(0 0% 4%);
+    background: hsl(0 0% 100%);
+    border: 1px solid hsl(var(--border));
+    line-height: 1;
+  }
+
+  &__language-name {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__language-separator {
+    margin-left: 0.15rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__portrait-frame {
+    position: relative;
+    width: min(22rem, 100%);
+    justify-self: center;
+    aspect-ratio: 0.82;
+    overflow: hidden;
+    background: hsl(var(--foreground));
+    clip-path: polygon(50% 0, 94% 17%, 100% 70%, 65% 100%, 13% 91%, 0 31%);
+    box-shadow: inset 0 0 0 0.55rem hsl(var(--foreground));
+
+    @include respond-to(md) {
+      width: 100%;
+      justify-self: stretch;
+      transform: translateY(-1.5rem) rotate(-2deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 1rem -1rem -1rem 1rem;
+      z-index: -1;
+      border: 1px solid hsl(var(--foreground) / 0.2);
+      clip-path: inherit;
+    }
+
+    &-image {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -54%) scale(1.68);
+      transform-origin: center center;
+      object-fit: cover;
+      object-position: 50% 0%;
+      filter: grayscale(1) contrast(1.08);
+    }
+  }
+}

@@ -1,0 +1,156 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: padding $transition-base, background $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &--scrolled {
+    padding-block: 0.6rem;
+    @include glass;
+    box-shadow: $shadow-sm;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  &--top {
+    padding-block: 1rem;
+    background: transparent;
+  }
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    transition: opacity $transition-fast;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__back {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border-radius: 0;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.25rem;
+    transition: background $transition-fast;
+    @include focus-ring;
+
+    &:hover {
+      background: hsl(var(--muted));
+    }
+
+    svg {
+      transition: transform $transition-fast;
+    }
+
+    &:hover svg {
+      transform: translateX(-2px);
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__lang {
+    display: flex;
+    gap: 0.125rem;
+    padding: 0.25rem;
+    border-radius: 0;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card) / 0.78);
+  }
+
+  &__lang-btn {
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: hsl(var(--muted-foreground));
+    transition: background $transition-fast, color $transition-fast;
+    @include focus-ring;
+
+    &--active {
+      background: hsl(var(--foreground));
+      color: hsl(var(--primary-foreground));
+    }
+  }
+
+  &__theme {
+    position: relative;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card) / 0.78);
+    color: hsl(var(--foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background $transition-fast;
+    @include focus-ring;
+
+    &:hover {
+      background: hsl(var(--muted));
+    }
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  &__theme-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity $transition-base;
+  }
+}

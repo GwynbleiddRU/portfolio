@@ -3,17 +3,15 @@ import { useParams, Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getProjectById } from "@/lib/projectData";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [mounted, setMounted] = useState(false);
   const { t } = useTranslation();
 
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
   useEffect(() => {
     setMounted(true);
-    // Scroll to top on page load
     window.scrollTo(0, 0);
   }, []);
 
@@ -26,158 +24,119 @@ const ProjectDetail = () => {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="page">
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6 max-w-7xl mx-auto animate-fade-in">
-        <span className="text-sm font-medium text-muted-foreground mb-4 block">
-          {t("projects.title")}
-        </span>
-
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-          {t(project.title)}
-        </h1>
-
-        <div className="flex flex-wrap gap-2 mb-8">
+      <section className="section section--project-hero animate-fade-in">
+        <span className="project-detail__label">{t("projects.title")}</span>
+        <h1 className="project-detail__title">{t(project.title)}</h1>
+        <div className="tag-list">
           {project.technologies.map((tech, i) => (
-            <span
-              key={i}
-              className="text-sm py-1 px-3 rounded-full bg-secondary text-secondary-foreground"
-            >
+            <span key={i} className="tag">
               {tech}
             </span>
           ))}
         </div>
       </section>
 
-      {/* Project Image */}
-      <section className="py-8 px-6 max-w-7xl mx-auto animate-slide-up" style={{ animationDelay: "100ms" }}>
-        <div className="rounded-xl overflow-hidden aspect-video">
+      <section
+        className="section section--project-media animate-slide-up"
+        style={{ animationDelay: "100ms" }}
+      >
+        <div className="project-detail__media">
           <div
-            className="w-full h-full bg-cover bg-center"
+            className="project-detail__media-image"
             style={{ backgroundImage: `url(${project.imageUrl})` }}
           />
         </div>
       </section>
 
-      {/* Project Content */}
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="md:col-span-2 animate-slide-up" style={{ animationDelay: "200ms" }}>
-            <h2 className="text-2xl font-semibold mb-6">
+      <section className="section section--project-content">
+        <div className="project-detail__layout">
+          <div className="animate-slide-up" style={{ animationDelay: "200ms" }}>
+            <h2 className="project-detail__overview-title">
               {t("projectDetail.overview")}
             </h2>
-
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              {t(project.fullDescription).split('\n').map((paragraph, i) => (
-                <p key={i} className="mb-4 text-muted-foreground">
+            {t(project.fullDescription)
+              .split("\n")
+              .map((paragraph, i) => (
+                <p key={i} className="project-detail__paragraph">
                   {paragraph.trim()}
                 </p>
               ))}
-            </div>
           </div>
 
-          <div className="animate-slide-up" style={{ animationDelay: "300ms" }}>
-            <div className={isSafari ? "top-32" : "sticky top-32"}>
-              <h3 className="text-xl font-semibold mb-6">
-                {t("projectDetail.details")}
-              </h3>
+          <aside
+            className="project-detail__sidebar animate-slide-up"
+            style={{ animationDelay: "300ms" }}
+          >
+            <h3 className="project-detail__sidebar-title">
+              {t("projectDetail.details")}
+            </h3>
 
-              <div className="space-y-6">
-                {project.liveUrl && (
-                  <div>
-                    <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                      {t("projectDetail.liveSite")}
-                    </h4>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary underline hover:no-underline"
-                    >
-                      {t("projectDetail.visitWebsite")}
-                    </a>
-                  </div>
-                )}
-
-                {project.demoUrl && (
-                  <div>
-                    <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                      {t("projectDetail.demo")}
-                    </h4>
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary underline hover:no-underline"
-                    >
-                      {t("projectDetail.viewDemo")}
-                    </a>
-                  </div>
-                )}
-
-                {project.githubUrl && (
-                  <div>
-                    <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                      {t("projectDetail.codeRepository")}
-                    </h4>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary underline hover:no-underline"
-                    >
-                      {t("projectDetail.viewOnGitHub")}
-                    </a>
-                  </div>
-                )}
-
-                <div>
-                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                    {t("projectDetail.technologies")}
-                  </h4>
-                  <ul className="space-y-1">
-                    {project.technologies.map((tech, i) => (
-                      <li key={i} className="text-sm">
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            {project.liveUrl && (
+              <div className="project-detail__detail">
+                <h4 className="project-detail__detail-label">
+                  {t("projectDetail.liveSite")}
+                </h4>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-detail__detail-link"
+                >
+                  {t("projectDetail.visitWebsite")}
+                </a>
               </div>
+            )}
+
+            {project.demoUrl && (
+              <div className="project-detail__detail">
+                <h4 className="project-detail__detail-label">
+                  {t("projectDetail.demo")}
+                </h4>
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-detail__detail-link"
+                >
+                  {t("projectDetail.viewDemo")}
+                </a>
+              </div>
+            )}
+
+            {project.githubUrl && (
+              <div className="project-detail__detail">
+                <h4 className="project-detail__detail-label">
+                  {t("projectDetail.codeRepository")}
+                </h4>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-detail__detail-link"
+                >
+                  {t("projectDetail.viewOnGitHub")}
+                </a>
+              </div>
+            )}
+
+            <div className="project-detail__detail">
+              <h4 className="project-detail__detail-label">
+                {t("projectDetail.technologies")}
+              </h4>
+              <ul className="project-detail__tech-list">
+                {project.technologies.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
-              <p className="text-sm text-muted-foreground">
-                {t("footer.copyright")}
-              </p>
-            </div>
-
-            <div className="flex items-center space-x-6">
-              <a href="https://t.me/dbops" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                ★ Telegram
-              </a>
-              <a href="https://github.com/GwynbleiddRU" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/george-nosachev/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                LinkedIn
-              </a>
-              <a href="mailto:nosachev.george@mail.ru" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {t("footer.contact")}
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

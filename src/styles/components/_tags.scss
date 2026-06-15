@@ -1,0 +1,20 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: $radius-full;
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border: 1px solid hsl(var(--border));
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

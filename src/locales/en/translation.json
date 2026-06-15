@@ -10,7 +10,11 @@
         "description1": "Experienced fullstack developer with deep expertise in software engineering and a strong track record of developing fully functional applications",
         "description2": "I design backend architectures, build frontend and mobile apps, develop and configure databases, sometimes handle data collection and machine learning tasks. Currently exploring multi‑agent development to enhance automation and workflow optimization.",
         "description3": "Have experience in configuring and administering virtual environments, as well as containerization and orchestration for high‑load systems",
-        "languages": "English - C1, Spanish - A2, Russian - Native"
+        "languages": [
+            { "level": "C1", "name": "English" },
+            { "level": "A2", "name": "Spanish" },
+            { "level": "Native", "name": "Russian" }
+        ]
     },
     "projects": {
         "title": "Projects",
@@ -95,7 +99,7 @@
         "viewCV": "Check my CV"
     },
     "footer": {
-        "copyright": "© 2025 George Nosachev. All rights reserved.",
+        "copyright": "© 2026 George Nosachev. All rights reserved.",
         "contact": "Contact"
     }
 }

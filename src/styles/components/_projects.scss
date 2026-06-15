@@ -1,0 +1,46 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.projects {
+  &__header {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+
+    @include respond-to(md) {
+      grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 0.55fr);
+      align-items: end;
+    }
+  }
+
+  &__label {
+    @include section-label;
+  }
+
+  &__title {
+    font-size: clamp(3rem, 9vw, 7rem);
+    line-height: 0.85;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    max-width: 31rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem;
+    }
+  }
+}
