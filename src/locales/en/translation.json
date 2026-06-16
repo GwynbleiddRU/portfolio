@@ -102,6 +102,7 @@
     },
     "footer": {
         "copyright": "© 2026 George Nosachev. All rights reserved.",
-        "contact": "Contact"
+        "contact": "Contact",
+        "scrollToTop": "Scroll to top"
     }
 }
