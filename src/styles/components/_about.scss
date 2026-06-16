@@ -138,6 +138,8 @@
       object-fit: cover;
       object-position: 50% 0%;
       filter: grayscale(1) contrast(1.08);
+      user-select: none;
+      -webkit-user-drag: none;
     }
   }
 }

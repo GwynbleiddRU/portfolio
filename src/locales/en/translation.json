@@ -97,7 +97,8 @@
     },
     "buttons": {
         "viewWork": "View my work",
-        "viewCV": "Check my CV"
+        "viewCV": "Check my CV",
+        "bookProject": "Book a project"
     },
     "footer": {
         "copyright": "© 2026 George Nosachev. All rights reserved.",

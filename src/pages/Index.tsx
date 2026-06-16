@@ -31,7 +31,7 @@ const Index = () => {
           <div className="hero__tagline-row">
             <p className="hero__tagline">{t("hero.title")}</p>
             <a
-              href="mailto:nosachev.gosha@gmail.com"
+              href="mailto:nosachev.george@mail.ru"
               className="hero__mail"
               aria-label={t("footer.contact")}
             >
@@ -52,6 +52,15 @@ const Index = () => {
               {t("buttons.viewWork")}
             </button>
             <a
+              href="https://gwynbleiddru.github.io/my-brand/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--ghost"
+              title="Book a project"
+            >
+              {t("buttons.bookProject")}
+            </a>
+            <a
               href="https://gwynbleiddru.github.io/cv-webpage/"
               target="_blank"
               rel="noopener noreferrer"
@@ -64,20 +73,24 @@ const Index = () => {
         </div>
 
         <div className="hero__signature" aria-hidden="true">
-          <span>01</span>
-          <span>Selected systems</span>
+          <span>100</span>
+          <span>Proven quality</span>
         </div>
       </section>
 
       <section className="section section--about">
         <div className="about__card">
           <div className="about__body">
-            <div className="about__portrait-frame">
+            <div
+              className="about__portrait-frame"
+              onContextMenu={(e) => e.preventDefault()}
+            >
               <img
                 src={portraitImage}
                 alt=""
                 className="about__portrait-frame-image"
                 loading="lazy"
+                draggable={false}
               />
             </div>
 
