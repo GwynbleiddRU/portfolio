@@ -34,7 +34,7 @@ const Header = () => {
             <button
               type="button"
               className="header__back animate-fade-in"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/", { state: { restoreScroll: true } })}
               aria-label="Back to home"
             >
               <svg

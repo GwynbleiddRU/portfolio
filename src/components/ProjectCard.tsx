@@ -1,6 +1,7 @@
 import { Project } from "@/lib/projectData";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { saveIndexScrollPosition } from "@/lib/scrollRestoration";
 
 interface ProjectCardProps {
   project: Project;
@@ -21,6 +22,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <Link
         to={`/project/${project.id}`}
         className="project-card__link"
+        onClick={saveIndexScrollPosition}
       >
         <div className="project-card__pattern" aria-hidden="true" />
 

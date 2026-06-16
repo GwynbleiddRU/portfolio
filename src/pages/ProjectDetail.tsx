@@ -39,18 +39,6 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      <section
-        className="section section--project-media animate-slide-up"
-        style={{ animationDelay: "100ms" }}
-      >
-        <div className="project-detail__media">
-          <div
-            className="project-detail__media-image"
-            style={{ backgroundImage: `url(${project.imageUrl})` }}
-          />
-        </div>
-      </section>
-
       <section className="section section--project-content">
         <div className="project-detail__layout">
           <div className="animate-slide-up" style={{ animationDelay: "200ms" }}>
@@ -64,6 +52,12 @@ const ProjectDetail = () => {
                   {paragraph.trim()}
                 </p>
               ))}
+              <div className="project-detail__media">
+                <div
+                  className="project-detail__media-image"
+                  style={{ backgroundImage: `url(${project.imageUrl})` }}
+                />
+              </div>
           </div>
 
           <aside

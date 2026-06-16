@@ -1,3 +1,5 @@
+import { useLayoutEffect } from "react";
+import { useLocation } from "react-router-dom";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/projectData";
 import Header from "@/components/Header";
@@ -5,6 +7,11 @@ import Footer from "@/components/Footer";
 import portraitImage from "../assets/images/portrait.jpeg";
 import { Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import {
+  clearIndexScrollPosition,
+  restoreIndexScrollPosition,
+  type IndexLocationState,
+} from "@/lib/scrollRestoration";
 
 type LanguageEntry = {
   level: string;
@@ -12,10 +19,20 @@ type LanguageEntry = {
 };
 
 const Index = () => {
+  const location = useLocation();
   const { t } = useTranslation();
   const languages = t("about.languages", {
     returnObjects: true,
   }) as LanguageEntry[];
+
+  useLayoutEffect(() => {
+    const state = location.state as IndexLocationState | null;
+    if (state?.restoreScroll) {
+      restoreIndexScrollPosition();
+    } else {
+      clearIndexScrollPosition();
+    }
+  }, [location.state]);
 
   return (
     <div className="page">
