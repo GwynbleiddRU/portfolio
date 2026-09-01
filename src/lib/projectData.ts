@@ -44,12 +44,28 @@ export interface Project {
   githubUrl?: string;
   featured?: boolean;
   template: 'standard' | 'multi-image';
+  imageDisplay?: ImageDisplay;
 }
 
 
 export interface ProjectImage {
   url: string;
   description?: string;
+}
+
+export interface ImageDisplay {
+  /**
+   * 'feature' (default): a large, informative diagram or screenshot.
+   * 'thematic': a small decorative accent — a logo, icon or mood shot.
+   */
+  variant?: 'feature' | 'thematic';
+  /**
+   * Where the image renders on the standard project layout.
+   * 'content' (default): end of the overview text column.
+   * 'hero': under the title and tags, before the overview starts.
+   * 'sidebar': a small accent above "Project Details".
+   */
+  position?: 'content' | 'hero' | 'sidebar';
 }
 
 export const projects: Project[] = [
@@ -97,7 +113,8 @@ export const projects: Project[] = [
     liveUrl: "https://foodcal.ru",
     githubUrl: "",
     featured: true,
-    template: "standard"
+    template: "standard",
+    imageDisplay: { variant: "feature", position: "hero" }
   },
   {
     id: "pdf-anonymizer",
@@ -109,14 +126,15 @@ export const projects: Project[] = [
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/anonymizer",
     featured: true,
-    template: "standard"
+    template: "standard",
+    imageDisplay: { variant: "feature", position: "content" }
   },
   {
     id: "tunelike-api",
     title: "projects.tunelike-api.title",
     shortDescription: "projects.tunelike-api.shortDescription",
     fullDescription: "projects.tunelike-api.fullDescription",
-    technologies: ["ASP.NET Core", "REST API", "MongoDB", "Swagger/OpenAPI", "SignalR", "Background Workers", "Python Web Scraping", "JWT Authentication", "OAuth Integration", "BCrypt Password Hashing", "Dependency Injection", "In-Memory Caching", "Nginx", "Linux VPS", "Asynchronous Programming", "Rate Limiting", "Data Analytics", "Collaborative Filtering", "Email Service Integration", "Logging Framework", "Entity Relationship Management", "Message Queuing"],
+    technologies: ["ASP.NET Core", "REST API", "MongoDB", "SignalR", "Swagger/OpenAPI", "JWT & OAuth Authentication", "BCrypt Password Hashing", "Python Web Scraping", "Collaborative Filtering", "Nginx", "Linux VPS"],
     imageUrl: TLApiImage,
     images: [
       {
@@ -212,7 +230,8 @@ export const projects: Project[] = [
     demoUrl: "https://www.youtube.com/watch?v=VNeDhh1Ge9U",
     githubUrl: "https://github.com/GwynbleiddRU/DBClient",
     featured: true,
-    template: "standard"
+    template: "standard",
+    imageDisplay: { variant: "feature", position: "sidebar" }
   },
   {
     id: "wpf-diagram-editor",
@@ -224,7 +243,8 @@ export const projects: Project[] = [
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/Nodes",
     featured: false,
-    template: "standard"
+    template: "standard",
+    imageDisplay: { variant: "feature", position: "sidebar" }
   },
   {
     id: "3dstruct-editor",
@@ -236,7 +256,8 @@ export const projects: Project[] = [
     liveUrl: "",
     githubUrl: "https://github.com/GwynbleiddRU/3DStruct",
     featured: true,
-    template: "standard"
+    template: "standard",
+    imageDisplay: { variant: "thematic", position: "sidebar" }
   },
   {
     id: "svo-airport-personnel-management",

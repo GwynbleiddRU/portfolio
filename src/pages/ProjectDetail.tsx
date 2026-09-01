@@ -23,6 +23,20 @@ const ProjectDetail = () => {
 
   if (!mounted) return null;
 
+  const variant = project.imageDisplay?.variant ?? "feature";
+  const position = project.imageDisplay?.position ?? "content";
+  const mediaClass = `project-detail__media${
+    variant === "thematic" ? " project-detail__media--thematic" : ""
+  }`;
+  const media = (
+    <div className={mediaClass}>
+      <div
+        className="project-detail__media-image"
+        style={{ backgroundImage: `url(${project.imageUrl})` }}
+      />
+    </div>
+  );
+
   return (
     <div className="page">
       <Header />
@@ -37,6 +51,9 @@ const ProjectDetail = () => {
             </span>
           ))}
         </div>
+        {position === "hero" && (
+          <div className="project-detail__hero-media">{media}</div>
+        )}
       </section>
 
       <section className="section section--project-content">
@@ -52,18 +69,16 @@ const ProjectDetail = () => {
                   {paragraph.trim()}
                 </p>
               ))}
-              <div className="project-detail__media">
-                <div
-                  className="project-detail__media-image"
-                  style={{ backgroundImage: `url(${project.imageUrl})` }}
-                />
-              </div>
+            {position === "content" && media}
           </div>
 
           <aside
             className="project-detail__sidebar animate-slide-up"
             style={{ animationDelay: "300ms" }}
           >
+            {position === "sidebar" && (
+              <div className="project-detail__sidebar-media">{media}</div>
+            )}
             <h3 className="project-detail__sidebar-title">
               {t("projectDetail.details")}
             </h3>

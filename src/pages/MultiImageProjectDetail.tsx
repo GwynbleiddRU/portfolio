@@ -44,7 +44,7 @@ const MultiImageProjectDetail = () => {
 
       <section className="section section--project-content section--project-content--multi-image">
         <div className="project-detail__layout project-detail__layout--multi-image">
-          <div className="animate-slide-up" style={{ animationDelay: "200ms" }}>
+          <div className="project-detail__overview animate-slide-up" style={{ animationDelay: "200ms" }}>
             <h2 className="project-detail__overview-title">
               {t("projectDetail.overview")}
             </h2>
@@ -135,15 +135,30 @@ const MultiImageProjectDetail = () => {
           </h2>
 
           <div className="project-detail__carousel-panel">
-            <div className="project-detail__carousel-visual">
-              <div className="project-detail__media">
-                <div
-                  className="project-detail__media-image"
-                  style={{
-                    backgroundImage: `url(${activeImage.url})`,
-                  }}
-                />
-              </div>
+            <div className="project-detail__carousel-media">
+              <div
+                className="project-detail__media-image"
+                style={{
+                  backgroundImage: `url(${activeImage.url})`,
+                }}
+              />
+              {project.images.length > 1 && (
+                <span className="project-detail__media-index">
+                  {String(activeImageIndex + 1).padStart(2, "0")} /{" "}
+                  {String(project.images.length).padStart(2, "0")}
+                </span>
+              )}
+            </div>
+
+            <div className="project-detail__carousel-footer">
+              {activeImage.description && (
+                <p
+                  key={activeImageIndex}
+                  className="project-detail__caption animate-fade-in"
+                >
+                  {t(activeImage.description)}
+                </p>
+              )}
 
               {project.images.length > 1 && (
                 <div className="project-detail__gallery">
@@ -169,15 +184,6 @@ const MultiImageProjectDetail = () => {
                 </div>
               )}
             </div>
-
-            {activeImage.description && (
-              <div
-                key={activeImageIndex}
-                className="project-detail__caption animate-fade-in"
-              >
-                <p>{t(activeImage.description)}</p>
-              </div>
-            )}
           </div>
         </div>
       </section>

@@ -64,3 +64,43 @@
   border-radius: $radius-2xl;
   box-shadow: $shadow-md;
 }
+
+// Viewfinder-style corner brackets, drawn as a single pseudo-element via
+// layered background gradients — no extra markup needed.
+@mixin corner-brackets($size: 16px, $thickness: 2px, $gap: 7px, $color: hsl(var(--foreground) / 0.85)) {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: #{$gap};
+    pointer-events: none;
+    background-image:
+      linear-gradient(#{$color}, #{$color}), linear-gradient(#{$color}, #{$color}),
+      linear-gradient(#{$color}, #{$color}), linear-gradient(#{$color}, #{$color}),
+      linear-gradient(#{$color}, #{$color}), linear-gradient(#{$color}, #{$color}),
+      linear-gradient(#{$color}, #{$color}), linear-gradient(#{$color}, #{$color});
+    background-repeat: no-repeat;
+    background-size:
+      #{$thickness} #{$size}, #{$size} #{$thickness},
+      #{$thickness} #{$size}, #{$size} #{$thickness},
+      #{$thickness} #{$size}, #{$size} #{$thickness},
+      #{$thickness} #{$size}, #{$size} #{$thickness};
+    background-position:
+      top left, top left,
+      top right, top right,
+      bottom left, bottom left,
+      bottom right, bottom right;
+  }
+}
+
+// The "technical frame" used for photography/screenshots across project
+// pages: sharp corners, a thin border, corner-bracket marks and a hard
+// offset shadow — deliberately contrasting with the soft, rounded
+// card-surface used for text containers.
+@mixin media-frame($corner: 16px, $thickness: 2px, $offset: 7px) {
+  position: relative;
+  border-radius: 0;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--muted));
+  box-shadow: #{$offset} #{$offset} 0 0 hsl(var(--foreground) / 0.9);
+  @include corner-brackets($corner, $thickness, 7px);
+}
