@@ -156,6 +156,22 @@
       grid-template-columns: 2fr 1fr;
       gap: 4rem;
     }
+
+    &--multi-image {
+      align-items: start;
+
+      @include respond-to(md) {
+        row-gap: 0;
+      }
+    }
+  }
+
+  &__gallery-block {
+    margin-top: 1rem;
+
+    @include respond-to(md) {
+      margin-top: 1.25rem;
+    }
   }
 
   &__overview-title {
@@ -168,6 +184,10 @@
     line-height: 1.75;
     color: hsl(var(--muted-foreground));
     margin-bottom: 1rem;
+
+    .project-detail__layout--multi-image &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &__sidebar {

@@ -78,6 +78,10 @@
 
 .section--project-content {
   padding-block: 4rem 2rem;
+
+  &--multi-image {
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+  }
 }
 
 .section--project-gallery {
