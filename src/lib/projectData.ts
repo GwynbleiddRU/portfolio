@@ -113,15 +113,19 @@ export const projects: Project[] = [
     images: [
       {
         url: CSSCheatsheetProperties,
+        description: "projects.css-cheatsheet.images.properties.description"
       },
       {
         url: CSSCheatsheetExample,
+        description: "projects.css-cheatsheet.images.example.description"
       },
       {
         url: CSSCheatsheetSelectors,
+        description: "projects.css-cheatsheet.images.selectors.description"
       },
       {
         url: CSSCheatsheetMobile,
+        description: "projects.css-cheatsheet.images.mobile.description"
       }
     ],
     liveUrl: "https://gwynbleiddru.github.io/css-explorer",
