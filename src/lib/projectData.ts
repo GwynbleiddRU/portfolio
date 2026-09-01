@@ -21,6 +21,16 @@ import CSSCheatsheetProperties from '../assets/images/projects/css-cheatsheet/cs
 import CSSCheatsheetSelectors from '../assets/images/projects/css-cheatsheet/css-explorer-selectors.avif';
 import CSSCheatsheetMobile from '../assets/images/projects/css-cheatsheet/css-explorer-mobile.avif';
 
+import ChemSchoolImage from '../assets/images/projects/chem-school/chem-school.avif';
+import ChemSchoolEditorImage from '../assets/images/projects/chem-school/editor.avif';
+import ChemSchoolGradingImage from '../assets/images/projects/chem-school/grading.avif';
+import ChemSchoolTestsImage from '../assets/images/projects/chem-school/tests.avif';
+import ChemSchoolPracticeImage from '../assets/images/projects/chem-school/practice.avif';
+import ChemSchoolOverviewImage from '../assets/images/projects/chem-school/overview.avif';
+
+import FoodPlanImage from '../assets/images/projects/food-plan/food-plan.avif';
+import PdfAnonymizerImage from '../assets/images/projects/pdf-anonymizer/pdf-anonymizer.avif';
+
 export interface Project {
   id: string;
   title: string;
@@ -43,6 +53,64 @@ export interface ProjectImage {
 }
 
 export const projects: Project[] = [
+  {
+    id: "chem-school",
+    title: "projects.chem-school.title",
+    shortDescription: "projects.chem-school.shortDescription",
+    fullDescription: "projects.chem-school.fullDescription",
+    technologies: ["ASP.NET Core", "React", "MongoDB", "TypeScript", "Vite", "TanStack Query"],
+    imageUrl: ChemSchoolImage,
+    images: [
+      {
+        url: ChemSchoolEditorImage,
+        description: "projects.chem-school.images.editor.description"
+      },
+      {
+        url: ChemSchoolGradingImage,
+        description: "projects.chem-school.images.grading.description"
+      },
+      {
+        url: ChemSchoolTestsImage,
+        description: "projects.chem-school.images.tests.description"
+      },
+      {
+        url: ChemSchoolPracticeImage,
+        description: "projects.chem-school.images.practice.description"
+      },
+      {
+        url: ChemSchoolOverviewImage,
+        description: "projects.chem-school.images.overview.description"
+      }
+    ],
+    liveUrl: "https://chem-school.ru",
+    githubUrl: "https://github.com/GwynbleiddRU/chem-school",
+    featured: true,
+    template: "multi-image"
+  },
+  {
+    id: "food-plan",
+    title: "projects.food-plan.title",
+    shortDescription: "projects.food-plan.shortDescription",
+    fullDescription: "projects.food-plan.fullDescription",
+    technologies: ["ASP.NET Core", "React", "MongoDB", "TypeScript", "Vite", "TanStack Query", "Tailwind"],
+    imageUrl: FoodPlanImage,
+    liveUrl: "https://foodcal.ru",
+    githubUrl: "",
+    featured: true,
+    template: "standard"
+  },
+  {
+    id: "pdf-anonymizer",
+    title: "projects.pdf-anonymizer.title",
+    shortDescription: "projects.pdf-anonymizer.shortDescription",
+    fullDescription: "projects.pdf-anonymizer.fullDescription",
+    technologies: ["Tauri", "React", "Python", "TypeScript", "PaddleOCR"],
+    imageUrl: PdfAnonymizerImage,
+    liveUrl: "",
+    githubUrl: "https://github.com/GwynbleiddRU/anonymizer",
+    featured: true,
+    template: "standard"
+  },
   {
     id: "tunelike-api",
     title: "projects.tunelike-api.title",

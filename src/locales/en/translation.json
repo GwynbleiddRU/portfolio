@@ -19,6 +19,38 @@
     "projects": {
         "title": "Projects",
         "description": "A selection of my recent work. Each project is unique and showcases different skills and technologies.",
+        "chem-school": {
+            "title": "ChemSchool",
+            "shortDescription": "Teacher/student platform: courses, a Notion-like editor, grading and tests.",
+            "fullDescription": "ChemSchool is a web platform for chemistry teaching. Teachers run courses, lessons, homework and tests; students submit work, take assessments and use a knowledge base with practice. The interface is in Russian, and the product is live.\nThe interesting piece is the materials editor. It is not a wrapped rich-text library: blocks, a custom right-click menu, [[ page links and Markdown export/import are owned end to end. Teachers grade submissions with a score, comments and mistake tags. Access is per course and per page, and a filterable audit log records admin actions.\nThe stack is a React and TypeScript SPA — Vite, TanStack Query, hand-written SCSS modules — talking to an ASP.NET Core API on MongoDB. Page icons and editor images go through a separate media service. Tokens live in httpOnly cookies.",
+            "images": {
+                "editor": {
+                    "description": "Materials live in a block editor the product owns, not a wrapped rich-text library. Headings, lists, quotes, todos and columns sit in one page. Typing [[ opens a search for another page; Markdown export and import go through the API."
+                },
+                "grading": {
+                    "description": "A student sends an open answer. The teacher returns a score, written feedback and a mistake tag. Questions about the work stay on the same page as a thread, not in a separate inbox."
+                },
+                "tests": {
+                    "description": "A test is a form: single choice, multiple choice, free text. Time limit, attempt cap and shuffle sit in the side panel. Closed questions score automatically; free text waits for the teacher."
+                },
+                "practice": {
+                    "description": "The knowledge base is not only articles. A topic can mix a cheat sheet, flashcards and a matching exercise so the student practices the same material they just read."
+                },
+                "overview": {
+                    "description": "After login the student sees what is next: upcoming lessons, due work, and the courses they can open. The teacher shell is a different layout; this home belongs to the student role."
+                }
+            }
+        },
+        "food-plan": {
+            "title": "FoodCal",
+            "shortDescription": "Diet builder: catalog, plans, and restriction-aware compatibility scores.",
+            "fullDescription": "FoodCal is a web app for building a diet around a health profile. You set metrics, targets and restrictions, then pick foods and assemble daily plans. The catalogue shows whether an item fits; analysis tools check a food or a whole plan. An admin panel covers stats, audit logs and food management. The site is public.\nThe interesting case is the restriction engine. Each food is allowed, limited or blocked from explicit evidence — allergens, ingredient families, tags — so a result can be audited. Dishes and full-day plans then get a numeric compatibility score on top of that status, not a black-box percentage.\nThe frontend is React and TypeScript on Vite, with TanStack Query and Tailwind. The API is ASP.NET Core on MongoDB. Photos for foods and dishes are served by a separate media service."
+        },
+        "pdf-anonymizer": {
+            "title": "Local Document Anonymizer",
+            "shortDescription": "Offline Windows app: find personal data in PDFs and images, then burn redactions into pixels.",
+            "fullDescription": "Local Document Anonymizer is a Windows desktop app for finding sensitive information in PDFs and images and covering it irreversibly. Processing stays on the machine: documents are not sent to a cloud service. A person still has to review the result before it leaves the desk.\nThe safe export is a rasterized page. Each page is drawn to pixels, redactions are burned in, and a new PDF or image is written. That throws away the original text layer, forms and hidden objects — a rectangle drawn over a live PDF is not enough. Detection runs locally: OCR, barcodes, label-anchored signatures, optional face detection. Uncertain pages can go to a review queue.\nThe desktop shell is Tauri, React and TypeScript. A Python sidecar does rendering, detection, redaction and verification over local stdin/stdout. English and Russian are both in the UI."
+        },
         "tunelike-api": {
             "title": "TuneLike API",
             "shortDescription": "Social API for dating, live chat and city events — with a user portrait built from music taste.",
